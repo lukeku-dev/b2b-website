@@ -3,131 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PACKMARTS – Industrial Packaging Solutions</title>
+<title>TP Global – Industrial Packaging Solutions</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
 
-  /* TOP BAR */
-  .topbar {
-    background: #2c2c2c;
-    color: #ccc;
-    font-size: 0.8rem;
-    padding: 7px 0;
-  }
-  .topbar-inner {
-    max-width: 1200px; margin: 0 auto; padding: 0 24px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
-  }
+  .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   .topbar a { color: #ccc; text-decoration: none; }
   .topbar a:hover { color: #fff; }
   .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
 
-  /* HEADER */
   header { background: #fff; border-bottom: 3px solid #c8391a; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-  .header-inner {
-    max-width: 1200px; margin: 0 auto; padding: 0 24px;
-    display: flex; align-items: center; justify-content: space-between; height: 70px;
-  }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-box {
-    background: #1c3557;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.04em;
-    padding: 8px 16px;
-    border-radius: 3px;
-  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 52px; width: auto; }
   .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
-
   .header-contact { text-align: right; }
-  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; letter-spacing: 0.02em; }
+  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
   .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
 
-  /* NAV */
-  nav { background: #1c3557; }
-  .nav-inner {
-    max-width: 1200px; margin: 0 auto; padding: 0 24px;
-    display: flex; align-items: center;
+  /* NAV WITH DROPDOWNS */
+  nav { background: #1c3557; position: relative; z-index: 99; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+
+  .nav-item { position: relative; }
+  .nav-item > a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+    padding: 13px 16px; display: flex; align-items: center; gap: 5px;
+    transition: all 0.2s; border-bottom: 3px solid transparent;
+    white-space: nowrap;
   }
-  nav a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    padding: 13px 18px;
+  .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
+  .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-item:hover > a .arrow { transform: rotate(180deg); }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #c8391a;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 200;
+  }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a {
     display: block;
-    transition: all 0.2s;
-    border-bottom: 3px solid transparent;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.15s;
   }
-  nav a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
-  nav .nav-inquiry {
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
+
+  .nav-inquiry {
     margin-left: auto;
-    background: #c8391a;
+    background: #c8391a !important;
     color: #fff !important;
-    font-weight: 600;
+    font-weight: 600 !important;
     border-bottom: none !important;
   }
-  nav .nav-inquiry:hover { background: #e04020 !important; }
+  .nav-inquiry:hover { background: #e04020 !important; }
 
   /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%);
-    padding: 64px 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 45%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff08" x="50" y="50" width="300" height="300" rx="4"/><rect fill="%23ffffff05" x="100" y="100" width="200" height="200" rx="4"/><line stroke="%23ffffff08" x1="0" y1="0" x2="400" y2="400" stroke-width="1"/><line stroke="%23ffffff08" x1="400" y1="0" x2="0" y2="400" stroke-width="1"/></svg>') center/cover;
-  }
-  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
-  .hero h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem; font-weight: 800;
-    color: #fff; line-height: 1.15;
-    margin-bottom: 16px;
-    max-width: 560px;
-  }
+  .hero { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 64px 24px; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; max-width: 560px; }
   .hero h1 em { color: #f0a040; font-style: normal; }
   .hero p { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.7; max-width: 480px; margin-bottom: 32px; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-red {
-    background: #c8391a; color: #fff;
-    font-weight: 600; font-size: 0.92rem;
-    padding: 13px 28px; border-radius: 3px;
-    text-decoration: none; transition: background 0.2s;
-    border: 2px solid #c8391a;
-  }
-  .btn-red:hover { background: #e04020; border-color: #e04020; }
-  .btn-outline {
-    background: transparent; color: #fff;
-    font-weight: 600; font-size: 0.92rem;
-    padding: 13px 28px; border-radius: 3px;
-    text-decoration: none; transition: all 0.2s;
-    border: 2px solid rgba(255,255,255,0.4);
-  }
-  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+  .btn-red { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; border: 2px solid #c8391a; transition: background 0.2s; }
+  .btn-red:hover { background: #e04020; }
+  .btn-outline { background: transparent; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.2s; }
+  .btn-outline:hover { border-color: #fff; }
 
-  /* STATS BAR */
+  /* STATS */
   .stats-bar { background: #f0a040; padding: 20px 24px; }
-  .stats-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px;
-  }
-  .stat { text-align: center; }
-  .stat .n { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #1c3557; line-height: 1; }
-  .stat .l { font-size: 0.75rem; font-weight: 600; color: rgba(28,53,87,0.7); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .stat .n { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: #1c3557; line-height: 1; text-align: center; }
+  .stat .l { font-size: 0.75rem; font-weight: 600; color: rgba(28,53,87,0.7); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; text-align: center; }
   .stat-div { width: 1px; height: 40px; background: rgba(28,53,87,0.2); }
 
-  /* SECTION STYLES */
+  /* SECTIONS */
   section { padding: 64px 24px; }
   .section-inner { max-width: 1200px; margin: 0 auto; }
   .sec-header { margin-bottom: 40px; }
@@ -138,16 +104,19 @@
   /* PRODUCTS */
   .products { background: #f8f8f8; }
   .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #e0e0e0; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden; }
-  .product-card { background: #fff; padding: 28px 24px; transition: all 0.2s; cursor: pointer; }
+  .product-card { background: #fff; padding: 28px 24px; transition: all 0.2s; }
   .product-card:hover { background: #f0f6ff; }
   .product-card:hover .prod-title { color: #c8391a; }
   .prod-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
   .prod-title { font-weight: 700; font-size: 0.98rem; color: #1c3557; margin-bottom: 8px; transition: color 0.2s; }
-  .prod-desc { font-size: 0.83rem; color: #666; line-height: 1.65; margin-bottom: 14px; }
-  .prod-link { font-size: 0.82rem; font-weight: 600; color: #c8391a; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .prod-items { list-style: none; margin-bottom: 14px; }
+  .prod-items li { font-size: 0.82rem; color: #666; padding: 3px 0; border-bottom: 1px solid #f5f5f5; }
+  .prod-items li:last-child { border-bottom: none; }
+  .prod-items li::before { content: '–  '; color: #c8391a; font-weight: 600; }
+  .prod-link { font-size: 0.82rem; font-weight: 600; color: #c8391a; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; }
   .prod-link:hover { gap: 8px; }
 
-  /* WHY US */
+  /* WHY */
   .why { background: #fff; }
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
   .why-card { border-left: 3px solid #c8391a; padding: 20px 20px 20px 24px; background: #f8f8f8; border-radius: 0 4px 4px 0; }
@@ -156,9 +125,7 @@
 
   /* INQUIRY */
   .inquiry { background: #1c3557; }
-  .inquiry-wrap {
-    display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start;
-  }
+  .inquiry-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start; }
   .inquiry-left { color: #fff; }
   .inquiry-left .sec-label { color: #f0a040; }
   .inquiry-left .sec-title { color: #fff; }
@@ -169,59 +136,41 @@
   .contact-row .ct { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
   .contact-row .ct a { color: rgba(255,255,255,0.85); text-decoration: none; }
   .contact-row .ct a:hover { color: #fff; }
-
   .inquiry-form { background: #fff; border-radius: 6px; padding: 36px; }
   .form-title { font-weight: 700; font-size: 1.05rem; color: #1c3557; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
   .fg { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
   .fg label { font-size: 0.78rem; font-weight: 600; color: #444; letter-spacing: 0.04em; text-transform: uppercase; }
-  .fg input, .fg select, .fg textarea {
-    border: 1.5px solid #ddd; border-radius: 3px;
-    padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #1a1a1a;
-    transition: border-color 0.2s; outline: none;
-  }
+  .fg input, .fg select, .fg textarea { border: 1.5px solid #ddd; border-radius: 3px; padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #1a1a1a; transition: border-color 0.2s; outline: none; }
   .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: #1c3557; }
   .fg textarea { resize: vertical; min-height: 110px; }
-  .form-submit {
-    width: 100%; background: #c8391a; color: #fff;
-    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    padding: 14px; border: none; border-radius: 3px; cursor: pointer;
-    transition: background 0.2s; margin-top: 4px;
-  }
+  .form-submit { width: 100%; background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
   .form-submit:hover { background: #e04020; }
   .form-note { font-size: 0.75rem; color: #999; text-align: center; margin-top: 10px; }
-  .success-msg {
-    display: none; background: #ecfdf5; border: 1px solid #6ee7b7;
-    color: #065f46; border-radius: 4px; padding: 14px 18px;
-    font-size: 0.88rem; font-weight: 500; margin-top: 14px; text-align: center;
-  }
+  .success-msg { display: none; background: #ecfdf5; border: 1px solid #6ee7b7; color: #065f46; border-radius: 4px; padding: 14px 18px; font-size: 0.88rem; font-weight: 500; margin-top: 14px; text-align: center; }
 
-  /* FOOTER */
   footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
   footer a { color: #888; text-decoration: none; }
   footer a:hover { color: #fff; }
   footer span { margin: 0 10px; }
 
-  /* RESPONSIVE */
   @media (max-width: 960px) {
     .product-grid { grid-template-columns: repeat(2, 1fr); }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
     .inquiry-wrap { grid-template-columns: 1fr; gap: 36px; }
+    .nav-inner { overflow-x: auto; }
   }
   @media (max-width: 640px) {
     .hero h1 { font-size: 2rem; }
     .product-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .stats-inner { gap: 24px; }
     .stat-div { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-left">
@@ -234,12 +183,10 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="#" class="logo">
-      <!-- LOGO PLACEHOLDER — replace img tag below with your logo -->
-      <div class="logo-box">PACKMARTS</div>
+      <img src="logo.png" alt="TP Global">
       <div class="logo-tagline">Industrial Packaging Solutions</div>
     </a>
     <div class="header-contact">
@@ -249,20 +196,82 @@
   </div>
 </header>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#products">Industrial Tape</a>
-    <a href="#products">Stretch Film</a>
-    <a href="#products">Strapping</a>
-    <a href="#products">Bags & Mailers</a>
-    <a href="#products">Boxes</a>
-    <a href="#products">Protective Materials</a>
+
+    <div class="nav-item">
+      <a href="#products">Industrial Tape <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#inquiry">Artist Tape</a>
+        <a href="#inquiry">Carton Sealing Tape</a>
+        <a href="#inquiry">Duct Tape</a>
+        <a href="#inquiry">Filament Tape</a>
+        <a href="#inquiry">Gaffer Tape</a>
+        <a href="#inquiry">Gum Tape</a>
+        <a href="#inquiry">Masking Tape</a>
+        <a href="#inquiry">Painters Tape</a>
+        <a href="#inquiry">Strapping Tape</a>
+        <a href="#inquiry">Vinyl Stripe Floor Tape</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#products">Stretch Film <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#inquiry">Sigma Blown Stretch Film</a>
+        <a href="#inquiry">TPLUX Premium Cast Film</a>
+        <a href="#inquiry">Machine Grade Film</a>
+        <a href="#inquiry">Color Film</a>
+        <a href="#inquiry">Banding Film</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#products">Strapping Products <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#inquiry">Polyester Strapping</a>
+        <a href="#inquiry">Polypropylene Strapping</a>
+        <a href="#inquiry">Steel Strapping</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#products">Bags / Mailers <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#inquiry">Poly Bag</a>
+        <a href="#inquiry">Mailer</a>
+        <a href="#inquiry">Bubble Mailers</a>
+        <a href="#inquiry">Woven Sacks</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#products">Corrugated Boxes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="cardboard-box.html">Cardboard Box</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#products">Protective Materials <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#inquiry">Bubble Wrap</a>
+        <a href="#inquiry">Corner Protector</a>
+        <a href="#inquiry">Peanuts</a>
+        <a href="#inquiry">Foam</a>
+        <a href="#inquiry">Kraft Paper</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#inquiry">Office Supplies</a>
+    </div>
+
     <a href="#inquiry" class="nav-inquiry">Request a Quote</a>
+
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <h1>Industrial Packaging,<br><em>Built for Business.</em></h1>
@@ -274,7 +283,6 @@
   </div>
 </section>
 
-<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat"><div class="n">500+</div><div class="l">Products Available</div></div>
@@ -287,7 +295,6 @@
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section class="products" id="products">
   <div class="section-inner">
     <div class="sec-header">
@@ -299,55 +306,88 @@
       <div class="product-card">
         <span class="prod-icon">🏷️</span>
         <div class="prod-title">Industrial Tape</div>
-        <div class="prod-desc">Carton sealing, duct, masking, filament, gaffer, gum, painter's, strapping, and vinyl stripe floor tape for all industrial applications.</div>
+        <ul class="prod-items">
+          <li>Artist Tape</li>
+          <li>Carton Sealing Tape</li>
+          <li>Duct Tape</li>
+          <li>Filament Tape</li>
+          <li>Gaffer Tape</li>
+          <li>Gum Tape</li>
+          <li>Masking Tape</li>
+          <li>Painters Tape</li>
+          <li>Strapping Tape</li>
+          <li>Vinyl Stripe Floor Tape</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🎞️</span>
         <div class="prod-title">Stretch Film</div>
-        <div class="prod-desc">Cast film, blown stretch film, machine grade film, color film, and banding film. Available in standard and heavy-duty grades.</div>
+        <ul class="prod-items">
+          <li>Sigma Blown Stretch Film</li>
+          <li>TPLUX Premium Cast Film</li>
+          <li>Machine Grade Film</li>
+          <li>Color Film</li>
+          <li>Banding Film</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🔗</span>
         <div class="prod-title">Strapping Products</div>
-        <div class="prod-desc">Polyester, polypropylene, and steel strapping with compatible tools and accessories for secure load containment.</div>
+        <ul class="prod-items">
+          <li>Polyester Strapping</li>
+          <li>Polypropylene Strapping</li>
+          <li>Steel Strapping</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">📬</span>
-        <div class="prod-title">Bags, Mailers & Woven Sacks</div>
-        <div class="prod-desc">Poly bags, bubble mailers, courier bags, and heavy-duty woven sacks for shipping, storage, and fulfillment operations.</div>
+        <div class="prod-title">Bags / Mailers / Woven Sacks</div>
+        <ul class="prod-items">
+          <li>Poly Bag</li>
+          <li>Mailer</li>
+          <li>Bubble Mailers</li>
+          <li>Woven Sacks</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">📦</span>
-        <div class="prod-title">Corrugated Boxes</div>
-        <div class="prod-desc">Standard and custom corrugated cardboard boxes in various sizes and wall thicknesses for safe product shipping.</div>
+        <div class="prod-title">Corrugated Cardboard / Box</div>
+        <ul class="prod-items">
+          <li>Cardboard Box</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🛡️</span>
-        <div class="prod-title">Protective Materials</div>
-        <div class="prod-desc">Bubble wrap, corner protectors, foam, packing peanuts, and kraft paper to protect goods during transit and storage.</div>
+        <div class="prod-title">Additional Protective Materials</div>
+        <ul class="prod-items">
+          <li>Bubble Wrap</li>
+          <li>Corner Protector</li>
+          <li>Peanuts</li>
+          <li>Foam</li>
+          <li>Kraft Paper</li>
+        </ul>
         <a href="#inquiry" class="prod-link">Request Inquiry →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="why">
   <div class="section-inner">
     <div class="sec-header">
-      <span class="sec-label">Why Packmarts</span>
+      <span class="sec-label">Why TP Global</span>
       <div class="sec-title">What Sets Us Apart</div>
       <div class="sec-line"></div>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <h3>Wholesale Pricing</h3>
-        <p>We work directly with manufacturers to offer competitive bulk pricing for businesses of all sizes — no retail markups.</p>
+        <p>Direct manufacturer relationships allow us to offer competitive bulk pricing for businesses of all sizes — no retail markups.</p>
       </div>
       <div class="why-card">
         <h3>Wide Product Selection</h3>
@@ -365,7 +405,6 @@
   </div>
 </section>
 
-<!-- INQUIRY -->
 <section class="inquiry" id="inquiry">
   <div class="section-inner">
     <div class="inquiry-wrap">
@@ -389,7 +428,6 @@
           </div>
         </div>
       </div>
-
       <div class="inquiry-form">
         <div class="form-title">Product Inquiry Form</div>
         <form id="inquiryForm">
@@ -421,8 +459,8 @@
               <option>Stretch Film</option>
               <option>Strapping Products</option>
               <option>Bags / Mailers / Woven Sacks</option>
-              <option>Corrugated Boxes</option>
-              <option>Protective Materials</option>
+              <option>Corrugated Cardboard / Box</option>
+              <option>Additional Protective Materials</option>
               <option>Office Supplies</option>
               <option>Multiple / Other</option>
             </select>
@@ -440,16 +478,12 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>
-    © 2026 PACKMARTS — Industrial Packaging Solutions
-    <span>|</span>
-    545 W 17th St, Hialeah, FL 33010
-    <span>|</span>
-    <a href="tel:3057786289">(305) 778-6289</a>
-    <span>|</span>
-    <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
+    © 2026 TP Global — Industrial Packaging Solutions
+    <span>|</span> 545 W 17th St, Hialeah, FL 33010
+    <span>|</span> <a href="tel:3057786289">(305) 778-6289</a>
+    <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
   </p>
 </footer>
 
@@ -457,14 +491,11 @@
   document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const inputs = this.querySelectorAll('input, select, textarea');
-    const name = inputs[0].value;
-    const company = inputs[1].value;
-    const email = inputs[2].value;
-    const phone = inputs[3].value;
-    const category = inputs[4].value;
-    const message = inputs[5].value;
-    const subject = encodeURIComponent('Packmarts Inquiry' + (name ? ' from ' + name : '') + (company ? ' – ' + company : ''));
-    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company || 'N/A'}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nCategory: ${category || 'N/A'}\n\nMessage:\n${message}`);
+    const name = inputs[0].value, company = inputs[1].value;
+    const email = inputs[2].value, phone = inputs[3].value;
+    const category = inputs[4].value, message = inputs[5].value;
+    const subject = encodeURIComponent('TP Global Inquiry' + (name ? ' from ' + name : '') + (company ? ' – ' + company : ''));
+    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company||'N/A'}\nEmail: ${email}\nPhone: ${phone||'N/A'}\nCategory: ${category||'N/A'}\n\nMessage:\n${message}`);
     window.location.href = `mailto:frank@packmarts.com?subject=${subject}&body=${body}`;
     document.getElementById('successMsg').style.display = 'block';
     this.reset();
