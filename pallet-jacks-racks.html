@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallet, Jacks, Racks – TP Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
+  .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .topbar a { color: #ccc; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
+  header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-cta { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .header-cta:hover { background: #e04020; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 52px; width: auto; }
+  .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
+  .header-contact { text-align: right; }
+  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
+  .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
+  nav { background: #1c3557; position: relative; z-index: 99; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+  .nav-item { position: relative; }
+  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.76rem; font-weight: 500; padding: 13px 10px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
+  .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
+  .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-item:hover > a .arrow { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
+  .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  .breadcrumb a:hover { color: #c8391a; }
+  .breadcrumb .sep { color: #ccc; }
+  .breadcrumb .current { color: #1c3557; font-weight: 600; }
+  .page-header { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 40px 24px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
+  .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
+  .product-img-box img { width: 100%; max-width: 200px; height: auto; object-fit: contain; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
+  .specs-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c8391a; margin-bottom: 12px; display: block; }
+  .specs-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; }
+  .specs-table th { background: #1c3557; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; }
+  .specs-table td { padding: 9px 14px; border-bottom: 1px solid #f0f0f0; color: #444; }
+  .specs-table tr:last-child td { border-bottom: none; }
+  .specs-table tr:nth-child(even) td { background: #f8f9fb; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
+  .inquiry-btn:hover { background: #e04020; }
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
+  .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
+  .inquiry-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .inquiry-section > p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 28px; }
+  .inquiry-form-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fg { display: flex; flex-direction: column; gap: 5px; }
+  .fg.full { grid-column: 1 / -1; }
+  .fg label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; text-transform: uppercase; }
+  .fg input, .fg select, .fg textarea { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #fff; outline: none; transition: border-color 0.2s; }
+  .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: #f0a040; }
+  .fg select option { background: #1c3557; }
+  .fg textarea { resize: vertical; min-height: 100px; }
+  .form-submit { background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: #e04020; }
+  .success-msg { display: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; border-radius: 4px; padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px; grid-column: 1/-1; text-align: center; }
+  footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
+  footer a { color: #888; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer span { margin: 0 10px; }
+  @media (max-width: 768px) {
+    .product-section { grid-template-columns: 1fr; }
+    .product-img-box { position: static; }
+    .inquiry-form-inner { grid-column: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 545 W 17th St, Hialeah, FL 33010</span>
+      <span>Mon–Fri: 9AM – 6PM EST</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:frank@packmarts.com">✉ frank@packmarts.com</a>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="TP Global">
+      <div class="logo-tagline">Industrial Packaging Solutions</div>
+    </a>
+    <div class="header-right">
+      <div class="header-contact">
+        <div class="phone">(305) 778-6289</div>
+        <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+      </div>
+      <a href="#inquiry" class="header-cta">Request a Quote</a>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="index.html#inquiry">Artist Tape</a>
+        <a href="index.html#inquiry">Carton Sealing Tape</a>
+        <a href="index.html#inquiry">Duct Tape</a>
+        <a href="index.html#inquiry">Filament Tape</a>
+        <a href="index.html#inquiry">Gaffer Tape</a>
+        <a href="index.html#inquiry">Gum Tape</a>
+        <a href="index.html#inquiry">Masking Tape</a>
+        <a href="index.html#inquiry">Painters Tape</a>
+        <a href="index.html#inquiry">Strapping Tape</a>
+        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
+        <a href="stretch-film.html?tab=color">Color Film</a>
+        <a href="stretch-film.html?tab=banding">Banding Film</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="strapping-products.html">Strapping Products <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
+        <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
+        <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
+        <a href="bags-mailers.html?tab=mailer">Mailer</a>
+        <a href="bags-mailers.html?tab=mailer">Bubble Mailers</a>
+        <a href="bags-mailers.html?tab=woven">Woven Sacks</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="cardboard-box.html">Corrugated Boxes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="cardboard-box.html">Cardboard Box</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
+        <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
+        <a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a>
+        <a href="protective-materials.html?tab=corner">Corner Protector</a>
+        <a href="protective-materials.html?tab=peanuts">Peanuts</a>
+        <a href="protective-materials.html?tab=kraft">Kraft Paper</a>
+      </div>
+    </div>
+    <div class="nav-item">
+            <a href="warehouse-supplies.html" class="active">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="equipment-handling.html">Equipment Handling Tools</a>
+        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
+        <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
+        <a href="pallet-jacks-racks.html" class="active">Pallet, Jacks, Racks</a>
+        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="janitorial-cleaning.html">Janitorial &amp; Cleaning Supplies <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="breakroom-supplies.html">Breakroom Supplies</a>
+        <a href="cleaning-supplies.html">Cleaning Supplies</a>
+        <a href="trash-bags.html">Trash Bags</a>
+        <a href="janitorial-paper.html">Janitorial Paper &amp; Dispensers</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment</a>
+    <span class="sep">›</span>
+    <span class="current">Pallet, Jacks, Racks</span>
+  </div>
+</div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Pallet, Jacks, Racks</h1>
+    <p>Pallet jacks, wooden and plastic pallets, racking systems, and accessories for efficient warehouse storage and material handling.</p>
+  </div>
+</div>
+<div class="main">
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Pallet Jack 27" × 48" — 5,000 lb</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Heavy-duty manual pallet jack for moving pallets in warehouses and loading docks. Reliable and easy to operate for everyday use.</p>
+      <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,000 lb</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Full Electric Pallet Jack 27" × 48" — 3,300 lb</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Full electric pallet jack for effortless pallet transport without manual pumping. Ideal for high-volume operations requiring frequent pallet movement.</p>
+      <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">3,300 lb</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Full Electric</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Pallet Jack 27" × 48" — 5,500 lb</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">High-capacity manual pallet jack for heavy-duty industrial applications. Engineered for durability and reliable performance under demanding load conditions.</p>
+      <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,500 lb</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wood Pallet 48" × 40" — Grade A Heat Treated (Used)</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Used Grade A heat treated wooden pallets in good condition. Heat treatment ensures compliance with international shipping regulations (ISPM 15).</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade A (Used)</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wood Pallet 22" × 37" — Grade A (EH Container Size)</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Grade A wooden pallets sized for EH containers. Suitable for export and container shipping applications.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">22" × 37"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade A</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wood Pallet 48" × 40" — Grade B</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Grade B wooden pallets for general warehousing and domestic shipping. A cost-effective option for non-export storage applications.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade B</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Euro Pallet 32" × 48" — Heat Treated</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Heat treated Euro pallets meeting ISPM 15 international shipping standards. Ideal for European export shipments and international freight.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">32" × 48"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wood Pallet 42" × 30" (E Container Size)</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Wooden pallets sized for E containers. Designed for container shipping and export applications requiring smaller pallet footprints.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">42" × 30"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wood Pallet 54" × 39" — Heat Treated (D Container Size)</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Heat treated wooden pallets in D container size. Compliant with ISPM 15 for international shipping.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">54" × 39"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Plastic Pallet 48" × 40" — 2,000 lb</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Durable plastic pallet for hygienic and weather-resistant storage. Ideal for food, pharmaceutical, and cleanroom applications where wood is not suitable.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">2,000 lb</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Plastic</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Pallet Rack Additional Beams</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Steel beams for expanding or adding levels to existing pallet racking systems. Provides robust support for safely storing inventory at height.</p>
+      <span class="specs-label">Specifications</span>
+      <table class="specs-table">
+        <thead><tr><th>Beam Capacity</th><th>Beam Height</th><th>No. of Levels</th><th>Weight</th><th>Width</th></tr></thead>
+        <tbody>
+          <tr><td>5,000 lb</td><td>4"</td><td>1</td><td>48 lb</td><td>96"</td></tr>
+          <tr><td>5,000 lb</td><td>5"</td><td>1</td><td>68 lb</td><td>120"</td></tr>
+          <tr><td>5,000 lb</td><td>6"</td><td>1</td><td>94 lb</td><td>144"</td></tr>
+        </tbody>
+      </table>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Frames for Pallet Rack Upright</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Heavy-duty upright frames for building or expanding pallet racking systems. Compatible with a wide range of racking configurations. Easy to install and engineered for maximum load capacity and stability.</p>
+      <span class="specs-label">Specifications</span>
+      <table class="specs-table">
+        <thead><tr><th>H × D</th></tr></thead>
+        <tbody>
+          <tr><td>192" × 42"</td></tr>
+          <tr><td>144" × 42"</td></tr>
+        </tbody>
+      </table>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Wire Decks 42" × 46" for Pallet Racks</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Steel wire decking for pallet rack shelves. Improves visibility of stored inventory, allows sprinkler water penetration for fire safety, and provides a stable surface for pallets and cartons.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">42" × 46"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Pallet Truck Stop</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">Safety stop device for preventing pallet jacks and trucks from rolling uncontrolled. Essential safety equipment for loading docks and warehouse floors.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🏗️</div></div>
+    <div class="product-info">
+      <h2>Pallet Cones 8" × 8" × 10" — "No Stack / Fragile"</h2>
+      <span class="category-tag">Pallet, Jacks, Racks</span>
+      <p class="desc">White corrugated pallet cones printed with "No Stack" and "Fragile" warnings in English. Placed on top of pallets to prevent stacking of fragile shipments.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8" × 8" × 10"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">White</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">50 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="inquiry-section" id="inquiry">
+    <h2>Request a Price Inquiry</h2>
+    <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
+    <form id="inquiryForm">
+      <div class="inquiry-form-inner">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="John Smith" required></div>
+        <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="Product name"></div>
+        <div class="fg"><label>Quantity</label><input type="text" placeholder="e.g. 10 units"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Specifications or any other questions..." required></textarea></div>
+        <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
+        <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>
+    © 2026 TP Global — Industrial Packaging Solutions
+    <span>|</span> 545 W 17th St, Hialeah, FL 33010
+    <span>|</span> <a href="tel:3057786289">(305) 778-6289</a>
+    <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
+  </p>
+</footer>
+<script>
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = this.querySelectorAll('input, select, textarea');
+    var name = inputs[0].value, company = inputs[1].value;
+    var email = inputs[2].value, phone = inputs[3].value;
+    var product = inputs[4].value, qty = inputs[5].value, message = inputs[6].value;
+    var subject = encodeURIComponent('Pallet, Jacks, Racks Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
+    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + (product||'N/A') + '\nQty: ' + (qty||'N/A') + '\n\nMessage:\n' + message);
+    window.location.href = 'mailto:frank@packmarts.com?subject=' + subject + '&body=' + body;
+    document.getElementById('successMsg').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse Supplies & Equipment – TP Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
+  .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .topbar a { color: #ccc; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
+  header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-cta { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .header-cta:hover { background: #e04020; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 52px; width: auto; }
+  .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
+  .header-contact { text-align: right; }
+  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
+  .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
+  nav { background: #1c3557; position: relative; z-index: 99; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+  .nav-item { position: relative; }
+  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.76rem; font-weight: 500; padding: 13px 10px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
+  .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
+  .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-item:hover > a .arrow { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
+  .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  .breadcrumb a:hover { color: #c8391a; }
+  .breadcrumb .sep { color: #ccc; }
+  .breadcrumb .current { color: #1c3557; font-weight: 600; }
+  .page-header { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 40px 24px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
+  .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+
+  /* Outer category tabs */
+  .product-tabs { display: flex; border-bottom: 2px solid #e0e0e0; margin-bottom: 40px; overflow-x: auto; }
+  .tab-btn { padding: 12px 20px; font-size: 0.85rem; font-weight: 600; color: #666; background: none; border: none; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; white-space: nowrap; }
+  .tab-btn:hover { color: #1c3557; }
+  .tab-btn.active { color: #c8391a; border-bottom-color: #c8391a; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Product section - same as strapping/stretch */
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
+  .product-img-box img { width: 100%; max-width: 200px; height: auto; object-fit: contain; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
+  .specs-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c8391a; margin-bottom: 12px; display: block; }
+  .specs-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; }
+  .specs-table th { background: #1c3557; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; }
+  .specs-table td { padding: 9px 14px; border-bottom: 1px solid #f0f0f0; color: #444; }
+  .specs-table tr:last-child td { border-bottom: none; }
+  .specs-table tr:nth-child(even) td { background: #f8f9fb; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
+  .inquiry-btn:hover { background: #e04020; }
+
+  /* Coming soon */
+  .coming-soon-box { background: #f8f8f8; border: 1px dashed #ccc; border-radius: 6px; padding: 48px 24px; text-align: center; color: #888; font-size: 0.9rem; }
+  .coming-soon-box strong { display: block; color: #1c3557; font-size: 1rem; margin-bottom: 8px; }
+
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
+  .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
+  .inquiry-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .inquiry-section > p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 28px; }
+  .inquiry-form-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fg { display: flex; flex-direction: column; gap: 5px; }
+  .fg.full { grid-column: 1 / -1; }
+  .fg label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; text-transform: uppercase; }
+  .fg input, .fg select, .fg textarea { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #fff; outline: none; transition: border-color 0.2s; }
+  .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: #f0a040; }
+  .fg select option { background: #1c3557; }
+  .fg textarea { resize: vertical; min-height: 100px; }
+  .form-submit { background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: #e04020; }
+  .success-msg { display: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; border-radius: 4px; padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px; grid-column: 1/-1; text-align: center; }
+  footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
+  footer a { color: #888; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer span { margin: 0 10px; }
+  @media (max-width: 768px) {
+    .product-section { grid-template-columns: 1fr; }
+    .product-img-box { position: static; }
+    .inquiry-form-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 545 W 17th St, Hialeah, FL 33010</span>
+      <span>Mon–Fri: 9AM – 6PM EST</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:frank@packmarts.com">✉ frank@packmarts.com</a>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="TP Global">
+      <div class="logo-tagline">Industrial Packaging Solutions</div>
+    </a>
+    <div class="header-right">
+      <div class="header-contact">
+        <div class="phone">(305) 778-6289</div>
+        <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+      </div>
+      <a href="#inquiry" class="header-cta">Request a Quote</a>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="index.html#inquiry">Artist Tape</a>
+        <a href="index.html#inquiry">Carton Sealing Tape</a>
+        <a href="index.html#inquiry">Duct Tape</a>
+        <a href="index.html#inquiry">Filament Tape</a>
+        <a href="index.html#inquiry">Gaffer Tape</a>
+        <a href="index.html#inquiry">Gum Tape</a>
+        <a href="index.html#inquiry">Masking Tape</a>
+        <a href="index.html#inquiry">Painters Tape</a>
+        <a href="index.html#inquiry">Strapping Tape</a>
+        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
+        <a href="stretch-film.html?tab=color">Color Film</a>
+        <a href="stretch-film.html?tab=banding">Banding Film</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="strapping-products.html">Strapping Products <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
+        <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
+        <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
+        <a href="bags-mailers.html?tab=mailer">Mailer</a>
+        <a href="bags-mailers.html?tab=mailer">Bubble Mailers</a>
+        <a href="bags-mailers.html?tab=woven">Woven Sacks</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="cardboard-box.html">Corrugated Boxes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="cardboard-box.html">Cardboard Box</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
+        <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
+        <a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a>
+        <a href="protective-materials.html?tab=corner">Corner Protector</a>
+        <a href="protective-materials.html?tab=peanuts">Peanuts</a>
+        <a href="protective-materials.html?tab=kraft">Kraft Paper</a>
+      </div>
+    </div>
+    <div class="nav-item">
+            <a href="warehouse-supplies.html" class="active">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="equipment-handling.html">Equipment Handling Tools</a>
+        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
+        <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
+        <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
+        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="janitorial-cleaning.html">Janitorial &amp; Cleaning Supplies <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="breakroom-supplies.html">Breakroom Supplies</a>
+        <a href="cleaning-supplies.html">Cleaning Supplies</a>
+        <a href="trash-bags.html">Trash Bags</a>
+        <a href="janitorial-paper.html">Janitorial Paper &amp; Dispensers</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <span class="current">Warehouse Supplies &amp; Equipment</span>
+  </div>
+</div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Warehouse Supplies &amp; Equipment</h1>
+    <p>A full range of warehouse equipment and supplies to improve efficiency and productivity — from handling tools to pallet systems and safety equipment.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="product-tabs">
+    <button class="tab-btn" id="btn-equipment-handling" onclick="switchTab('equipment-handling')">Equipment Handling Tools</button>
+    <button class="tab-btn" id="btn-hand-trucks" onclick="switchTab('hand-trucks')">Hand Trucks &amp; Dolly Movers</button>
+    <button class="tab-btn" id="btn-staplers" onclick="switchTab('staplers')">Industrial Staplers &amp; Staples</button>
+    <button class="tab-btn" id="btn-pallets" onclick="switchTab('pallets')">Pallet, Jacks, Racks</button>
+    <button class="tab-btn" id="btn-safety" onclick="switchTab('safety')">Safety Supplies</button>
+    <button class="tab-btn" id="btn-seal-locks" onclick="switchTab('seal-locks')">Seal &amp; Locks</button>
+    <button class="tab-btn" id="btn-tools" onclick="switchTab('tools')">Tools &amp; Office Supplies</button>
+  </div>
+
+  <!-- EQUIPMENT HANDLING TOOLS -->
+  <div class="tab-content" id="tab-equipment-handling">
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Steel Ramp Dock Boards</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Heavy-duty fully welded steel dock boards for powered vehicle operations. Pin style design with lift loops for easy handling and positioning. ANSI MH30.2 compliant.</p>
+        <span class="specs-label">Specifications</span>
+        <table class="specs-table">
+          <thead><tr><th>W × L</th><th>Max Gross Weight</th><th>Tare Weight</th><th>Usable Width</th></tr></thead>
+          <tbody>
+            <tr><td>72" × 72"</td><td>15,000 lb</td><td>703 lb</td><td>66"</td></tr>
+            <tr><td>72" × 60"</td><td>15,000 lb</td><td>605 lb</td><td>66"</td></tr>
+            <tr><td>60" × 60"</td><td>15,000 lb</td><td>523 lb</td><td>54"</td></tr>
+            <tr><td>48" × 60"</td><td>15,000 lb</td><td>439 lb</td><td>54"</td></tr>
+          </tbody>
+        </table>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Aluminum Ramp Dock Board with Steel Curbs</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Manufactured from high grade "diamond deck" aluminum and reinforced with structural steel side curbs — a lightweight alternative to steel boards. Curbs are bolted in place for added strength. Locking legs provide secure positioning and runoff protection. 11" lip offers smooth transition from dock to truck. Available with optional lifting chains or EZ-Roll handles. ANSI MH30.2 compliant.</p>
+        <span class="specs-label">Specifications</span>
+        <table class="specs-table">
+          <thead><tr><th>W × L</th><th>Max Gross Weight</th><th>Tare Weight</th><th>Usable Width</th></tr></thead>
+          <tbody>
+            <tr><td>60" × 60"</td><td>10,000 lb</td><td>163 lb</td><td>57"</td></tr>
+            <tr><td>60" × 48"</td><td>10,000 lb</td><td>163 lb</td><td>57"</td></tr>
+          </tbody>
+        </table>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Aluminum Dock Plate</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Lightweight and portable aluminum dock plate. Easy to move between dock positions. Ideal for hand truck and cart use.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Size</div>
+          <div class="tag-group"><span class="spec-tag">36" × 48"</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-row-label">Capacity</div>
+          <div class="tag-group"><span class="spec-tag">2,000 lb</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Poly Curb Ramp</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Durable plastic curb ramp for smooth transitions between dock and floor levels. Lightweight and easy to reposition. Suitable for hand trucks, carts, and light equipment.</p>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Forklift Extension — 72" Long Pair</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Heavy-duty forklift tine extensions for handling longer loads safely. Slides over existing tines to extend reach. Sold as a pair.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Length</div>
+          <div class="tag-group"><span class="spec-tag">72"</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-row-label">Sold As</div>
+          <div class="tag-group"><span class="spec-tag">Pair</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Pallet Puller with 30" Chain</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Industrial pallet puller for moving pallets in tight spaces without a forklift. Ideal for warehouses, storage areas, and loading docks.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Chain Length</div>
+          <div class="tag-group"><span class="spec-tag">30"</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-row-label">Pull Capacity</div>
+          <div class="tag-group"><span class="spec-tag">Up to 5,000 lb</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>5/8" Polyester Strapping Sealer Tool</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Manual tensioner and sealer tool for 5/8" polyester strapping. Provides reliable, consistent seals for packaging and bundling operations.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Compatible Strapping Width</div>
+          <div class="tag-group"><span class="spec-tag">5/8"</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Bolt Cutter — 30"</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Heavy-duty bolt cutter for cutting wire, cable, chains, and strapping. Hardened alloy steel jaws for long-lasting cutting performance.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Length</div>
+          <div class="tag-group"><span class="spec-tag">30"</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Wheel Chock — 6" × 8" × 10"</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Solid rubber wheel chock for securing trucks and trailers at loading docks. Non-slip base ensures reliable positioning.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Dimensions</div>
+          <div class="tag-group"><span class="spec-tag">6" × 8" × 10"</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Loadbar for Trucks — 104"</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Adjustable cargo load bar for securing loads inside trucks and trailers. Prevents load shifting during transit. Fits standard trailer widths.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Length</div>
+          <div class="tag-group"><span class="spec-tag">104"</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🔧</div></div>
+      <div class="product-info">
+        <h2>Chicken Wire — 4' × 50' Roll</h2>
+        <span class="category-tag">Equipment Handling Tools</span>
+        <p class="desc">Galvanized hexagonal wire mesh for fencing, caging, and general industrial applications. Rust-resistant finish for indoor and outdoor use.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Roll Size</div>
+          <div class="tag-group"><span class="spec-tag">4' × 50'</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HAND TRUCKS & DOLLY MOVERS -->
+  <div class="tab-content" id="tab-hand-trucks">
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Heavy-Duty Hand Truck with Metal Solid Wheels</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Heavy-duty steel hand truck with solid metal wheels for reliable performance in demanding warehouse environments. Sturdy frame designed for moving heavy loads with ease.</p>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Aluminum Convertible Hand Truck</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Lightweight aluminum hand truck that converts between upright two-wheel and horizontal four-wheel positions. Versatile for moving boxes, appliances, and other freight.</p>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Aluminum Convertible Hand Truck 3-IN-1</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Heavy-duty 3-in-1 convertible aluminum hand truck. Converts between two-wheel, four-wheel, and stair-climbing modes for maximum versatility.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Capacity</div>
+          <div class="tag-group"><span class="spec-tag">1,000 lb</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Aluminum Hand Truck</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Lightweight and durable aluminum hand truck for everyday warehouse and shipping use. Easy to maneuver and built for long-term reliability.</p>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Dual Purpose Hand Truck with Solid Wheels</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Dual-purpose hand truck with solid wheels that converts between upright and platform positions. Ideal for moving heavy or bulky items across warehouse floors.</p>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <div class="product-img-box"><div class="placeholder">🛒</div></div>
+      <div class="product-info">
+        <h2>Hardwood Carpet End Dolly — 4" Casters</h2>
+        <span class="category-tag">Hand Trucks &amp; Dolly Movers</span>
+        <p class="desc">Hardwood platform dolly with 4" swivel casters for smooth movement of heavy items across warehouse floors. Ideal for furniture, appliances, and bulk freight.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Caster Size</div>
+          <div class="tag-group"><span class="spec-tag">4"</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-row-label">Capacity</div>
+          <div class="tag-group"><span class="spec-tag">750 lb</span></div>
+        </div>
+        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMING SOON TABS -->
+  <div class="tab-content" id="tab-staplers">
+    <div class="coming-soon-box"><strong>Industrial Staplers &amp; Staples</strong>Products for this category are being added. Contact us for current availability.</div>
+  </div>
+  <div class="tab-content" id="tab-pallets">
+    <div class="coming-soon-box"><strong>Pallet, Jacks, Racks</strong>Products for this category are being added. Contact us for current availability.</div>
+  </div>
+  <div class="tab-content" id="tab-safety">
+    <div class="coming-soon-box"><strong>Safety Supplies</strong>Products for this category are being added. Contact us for current availability.</div>
+  </div>
+  <div class="tab-content" id="tab-seal-locks">
+    <div class="coming-soon-box"><strong>Seal &amp; Locks</strong>Products for this category are being added. Contact us for current availability.</div>
+  </div>
+  <div class="tab-content" id="tab-tools">
+    <div class="coming-soon-box"><strong>Tools &amp; Office Supplies</strong>Products for this category are being added. Contact us for current availability.</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="inquiry-section" id="inquiry">
+    <h2>Request a Price Inquiry</h2>
+    <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
+    <form id="inquiryForm">
+      <div class="inquiry-form-inner">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="John Smith" required></div>
+        <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
+        <div class="fg">
+          <label>Category</label>
+          <select>
+            <option>Equipment Handling Tools</option>
+            <option>Hand Trucks &amp; Dolly Movers</option>
+            <option>Industrial Staplers &amp; Staples</option>
+            <option>Pallet, Jacks, Racks</option>
+            <option>Safety Supplies</option>
+            <option>Seal &amp; Locks</option>
+            <option>Tools &amp; Office Supplies</option>
+            <option>Multiple / Not Sure</option>
+          </select>
+        </div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="e.g. Steel Ramp Dock Board 72×72"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Quantity, specifications, or any other questions..." required></textarea></div>
+        <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
+        <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>
+    © 2026 TP Global — Industrial Packaging Solutions
+    <span>|</span> 545 W 17th St, Hialeah, FL 33010
+    <span>|</span> <a href="tel:3057786289">(305) 778-6289</a>
+    <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
+  </p>
+</footer>
+
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('btn-' + tab).classList.add('active');
+  }
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var tab = params.get('tab');
+    if (tab && document.getElementById('tab-' + tab)) {
+      switchTab(tab);
+    } else {
+      switchTab('equipment-handling');
+    }
+  })();
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = this.querySelectorAll('input, select, textarea');
+    var name = inputs[0].value, company = inputs[1].value;
+    var email = inputs[2].value, phone = inputs[3].value;
+    var category = inputs[4].value, product = inputs[5].value;
+    var message = inputs[6].value;
+    var subject = encodeURIComponent('Warehouse Supplies Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
+    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nCategory: ' + category + '\nProduct: ' + (product||'N/A') + '\n\nMessage:\n' + message);
+    window.location.href = 'mailto:frank@packmarts.com?subject=' + subject + '&body=' + body;
+    document.getElementById('successMsg').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

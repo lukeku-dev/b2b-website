@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools & Office Supplies – TP Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
+  .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .topbar a { color: #ccc; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
+  header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-cta { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .header-cta:hover { background: #e04020; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 52px; width: auto; }
+  .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
+  .header-contact { text-align: right; }
+  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
+  .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
+  nav { background: #1c3557; position: relative; z-index: 99; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+  .nav-item { position: relative; }
+  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.76rem; font-weight: 500; padding: 13px 10px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
+  .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
+  .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-item:hover > a .arrow { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
+  .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  .breadcrumb a:hover { color: #c8391a; }
+  .breadcrumb .sep { color: #ccc; }
+  .breadcrumb .current { color: #1c3557; font-weight: 600; }
+  .page-header { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 40px 24px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
+  .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
+  .product-img-box img { width: 100%; max-width: 200px; height: auto; object-fit: contain; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
+  .specs-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c8391a; margin-bottom: 12px; display: block; }
+  .specs-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; }
+  .specs-table th { background: #1c3557; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; }
+  .specs-table td { padding: 9px 14px; border-bottom: 1px solid #f0f0f0; color: #444; }
+  .specs-table tr:last-child td { border-bottom: none; }
+  .specs-table tr:nth-child(even) td { background: #f8f9fb; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
+  .inquiry-btn:hover { background: #e04020; }
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
+  .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
+  .inquiry-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .inquiry-section > p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 28px; }
+  .inquiry-form-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fg { display: flex; flex-direction: column; gap: 5px; }
+  .fg.full { grid-column: 1 / -1; }
+  .fg label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; text-transform: uppercase; }
+  .fg input, .fg select, .fg textarea { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #fff; outline: none; transition: border-color 0.2s; }
+  .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: #f0a040; }
+  .fg select option { background: #1c3557; }
+  .fg textarea { resize: vertical; min-height: 100px; }
+  .form-submit { background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: #e04020; }
+  .success-msg { display: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; border-radius: 4px; padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px; grid-column: 1/-1; text-align: center; }
+  footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
+  footer a { color: #888; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer span { margin: 0 10px; }
+  @media (max-width: 768px) {
+    .product-section { grid-template-columns: 1fr; }
+    .product-img-box { position: static; }
+    .inquiry-form-inner { grid-column: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 545 W 17th St, Hialeah, FL 33010</span>
+      <span>Mon–Fri: 9AM – 6PM EST</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:frank@packmarts.com">✉ frank@packmarts.com</a>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="TP Global">
+      <div class="logo-tagline">Industrial Packaging Solutions</div>
+    </a>
+    <div class="header-right">
+      <div class="header-contact">
+        <div class="phone">(305) 778-6289</div>
+        <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+      </div>
+      <a href="#inquiry" class="header-cta">Request a Quote</a>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="index.html#inquiry">Artist Tape</a>
+        <a href="index.html#inquiry">Carton Sealing Tape</a>
+        <a href="index.html#inquiry">Duct Tape</a>
+        <a href="index.html#inquiry">Filament Tape</a>
+        <a href="index.html#inquiry">Gaffer Tape</a>
+        <a href="index.html#inquiry">Gum Tape</a>
+        <a href="index.html#inquiry">Masking Tape</a>
+        <a href="index.html#inquiry">Painters Tape</a>
+        <a href="index.html#inquiry">Strapping Tape</a>
+        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
+        <a href="stretch-film.html?tab=color">Color Film</a>
+        <a href="stretch-film.html?tab=banding">Banding Film</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="strapping-products.html">Strapping Products <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
+        <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
+        <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
+        <a href="bags-mailers.html?tab=mailer">Mailer</a>
+        <a href="bags-mailers.html?tab=mailer">Bubble Mailers</a>
+        <a href="bags-mailers.html?tab=woven">Woven Sacks</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="cardboard-box.html">Corrugated Boxes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="cardboard-box.html">Cardboard Box</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
+        <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
+        <a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a>
+        <a href="protective-materials.html?tab=corner">Corner Protector</a>
+        <a href="protective-materials.html?tab=peanuts">Peanuts</a>
+        <a href="protective-materials.html?tab=kraft">Kraft Paper</a>
+      </div>
+    </div>
+    <div class="nav-item">
+            <a href="warehouse-supplies.html" class="active">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="equipment-handling.html">Equipment Handling Tools</a>
+        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
+        <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
+        <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
+        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="tools-office-supplies.html" class="active">Tools &amp; Office Supplies</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="janitorial-cleaning.html">Janitorial &amp; Cleaning Supplies <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="breakroom-supplies.html">Breakroom Supplies</a>
+        <a href="cleaning-supplies.html">Cleaning Supplies</a>
+        <a href="trash-bags.html">Trash Bags</a>
+        <a href="janitorial-paper.html">Janitorial Paper &amp; Dispensers</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment</a>
+    <span class="sep">›</span>
+    <span class="current">Tools &amp; Office Supplies</span>
+  </div>
+</div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Tools & Office Supplies</h1>
+    <p>General tools, office supplies, fans, scales, and equipment to support day-to-day warehouse and business operations.</p>
+  </div>
+</div>
+<div class="main">
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Legal Copy Paper 8.5" × 14" — 5,000 Sheets</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Legal size copy paper for printers and copiers. 5,000 sheet case for high-volume office and warehouse printing needs.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8.5" × 14"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Qty</div><div class="tag-group"><span class="spec-tag">5,000 sheets</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Multipurpose Letter Copy Paper — 92 Bright</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">92 bright multipurpose letter copy paper for everyday office use. Compatible with all standard laser and inkjet printers and copiers.</p>
+      <div class="spec-row"><div class="spec-row-label">Brightness</div><div class="tag-group"><span class="spec-tag">92</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">Letter</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Air Waybills 4-Part NCR Continuous Form — 25 Units</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">4-part NCR (no carbon required) continuous form air waybills for shipping documentation. Pack of 25 units for freight and logistics operations.</p>
+      <div class="spec-row"><div class="spec-row-label">Parts</div><div class="tag-group"><span class="spec-tag">4-Part NCR</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">25 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Double Coupon Tickets 2" × 1" — "Keep This Ticket"</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Two-part perforated coupon tickets for item tracking, baggage tagging, and inventory management. Printed with "Keep This Ticket" for customer retention.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 1"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">5,000 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Manila Shipping Tags 4.25" × 2.125" — 13-Point, Pre-Strung</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Heavy-duty 13-point manila shipping tags, pre-strung and ready to use. Available in multiple colors for color-coded inventory and shipping identification.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4.25" × 2.125"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">13-point · Pre-strung</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Pallet Black Markers — 12 Units</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Large tip black markers for marking pallets, cartons, and warehouse inventory. Permanent ink for clear, long-lasting markings on cardboard, wood, and plastic surfaces.</p>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Black</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">12 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Tape Measure — 1/2" × 25'</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Compact and reliable tape measure for measuring pallets, packages, and warehouse spaces. Lever lock blade for easy one-hand use.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">1/2" × 25'</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Digital Scale Platform 48" × 48" — 5,000 lb</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Large platform floor scale for weighing pallets and heavy freight. High-capacity 5,000 lb capacity with a wide 48" × 48" platform suitable for standard pallet sizes.</p>
+      <div class="spec-row"><div class="spec-row-label">Platform Size</div><div class="tag-group"><span class="spec-tag">48" × 48"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,000 lb</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Digital Scale 350 lb — Legal for Trade</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">NTEP-certified legal-for-trade digital scale for accurate commercial weighing. Suitable for shipping departments and freight operations requiring certified weight measurements.</p>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">350 lb</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Certification</div><div class="tag-group"><span class="spec-tag">Legal for Trade</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Industrial Pedestal Fan — 30"</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Heavy-duty industrial pedestal fan for warehouse and workshop ventilation. Adjustable height and tilt for directed airflow across large spaces.</p>
+      <div class="spec-row"><div class="spec-row-label">Blade Size</div><div class="tag-group"><span class="spec-tag">30"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Oscillating Misting Fan System Kit</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Industrial misting fan system for cooling outdoor loading docks and warehouse spaces. Oscillating design for wide area coverage. Reduces ambient temperature for outdoor workers.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Industrial Belt Drive Fan — 42" Portable Blower</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">High-powered 42" portable belt drive blower fan for maximum airflow in large warehouses and industrial spaces. Portable design for easy repositioning.</p>
+      <div class="spec-row"><div class="spec-row-label">Blade Size</div><div class="tag-group"><span class="spec-tag">42"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Polypropylene Tying Twine — 1-Ply, 450 lb</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Strong white polypropylene tying twine for bundling, baling, and general warehouse use. 450 lb tensile strength for reliable bundling of heavy packages and materials.</p>
+      <div class="spec-row"><div class="spec-row-label">Tensile Strength</div><div class="tag-group"><span class="spec-tag">450 lb</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Polypropylene · 1-Ply</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Glue Gun</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Industrial hot glue gun for packaging, assembly, and general warehouse repairs. Compatible with standard glue sticks for versatile bonding applications.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Retail Glue Sticks 10" × 7/16" — 50 Units/Bag</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Standard size hot melt glue sticks compatible with most industrial and retail glue guns. Sold in bags of 50 sticks.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">10" × 7/16"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">50 units/bag</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Glue Stick 1/2" for Glue Gun — 25 lb/Case</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">1/2" diameter hot melt glue sticks for industrial glue guns. Sold by the case (25 lb) for high-volume packaging and bonding operations.</p>
+      <div class="spec-row"><div class="spec-row-label">Diameter</div><div class="tag-group"><span class="spec-tag">1/2"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Case Weight</div><div class="tag-group"><span class="spec-tag">25 lb</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Aluminum Handy Cutter Knife — 4.2" × 2", 12 Units</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Compact aluminum utility knife for cutting tape, cartons, and packaging materials. Pack of 12 for warehouse and shipping department use.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4.2" × 2"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">12 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Retractable Metal Heavy Duty Knife</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Heavy-duty metal retractable utility knife for cutting strapping, tape, and packaging materials. Durable metal body with quick-change blade mechanism.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Folding Utility Knife</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Compact folding utility knife for safe carrying and easy access. Ideal for warehouse workers who need a reliable cutting tool throughout the workday.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Heavy Duty Replacement Blades with Dispenser — 75 Blades</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Replacement blades with built-in dispenser for standard utility knives. Pack of 75 blades for extended warehouse use.</p>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">75 blades</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Bolt Cutters</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Heavy-duty bolt cutters for cutting wire, cable, padlocks, and chains. Essential tool for warehouse maintenance and security operations.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Scale Heavy Duty Front Bump Guard</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Front bump guard for platform scales to protect the scale from forklift and pallet jack impacts. Extends the life of warehouse floor scales.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Scale Heavy Duty Side Bump Guard</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Side bump guard for platform scales providing lateral impact protection. Pairs with front bump guard for complete scale protection in busy warehouse environments.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Scale Medium Duty Side Bump Guard</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Medium duty side bump guard for standard warehouse floor scales. Provides essential impact protection for everyday warehouse use.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗂️</div></div>
+    <div class="product-info">
+      <h2>Standing Desk 26.5" × 22.2"</h2>
+      <span class="category-tag">Tools &amp; Office Supplies</span>
+      <p class="desc">Adjustable height standing desk for warehouse offices and shipping stations. Promotes ergonomic working posture for staff who alternate between sitting and standing.</p>
+      <div class="spec-row"><div class="spec-row-label">Desktop Size</div><div class="tag-group"><span class="spec-tag">26.5" × 22.2"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="inquiry-section" id="inquiry">
+    <h2>Request a Price Inquiry</h2>
+    <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
+    <form id="inquiryForm">
+      <div class="inquiry-form-inner">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="John Smith" required></div>
+        <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="Product name"></div>
+        <div class="fg"><label>Quantity</label><input type="text" placeholder="e.g. 10 units"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Specifications or any other questions..." required></textarea></div>
+        <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
+        <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>
+    © 2026 TP Global — Industrial Packaging Solutions
+    <span>|</span> 545 W 17th St, Hialeah, FL 33010
+    <span>|</span> <a href="tel:3057786289">(305) 778-6289</a>
+    <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
+  </p>
+</footer>
+<script>
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = this.querySelectorAll('input, select, textarea');
+    var name = inputs[0].value, company = inputs[1].value;
+    var email = inputs[2].value, phone = inputs[3].value;
+    var product = inputs[4].value, qty = inputs[5].value, message = inputs[6].value;
+    var subject = encodeURIComponent('Tools & Office Supplies Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
+    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + (product||'N/A') + '\nQty: ' + (qty||'N/A') + '\n\nMessage:\n' + message);
+    window.location.href = 'mailto:frank@packmarts.com?subject=' + subject + '&body=' + body;
+    document.getElementById('successMsg').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

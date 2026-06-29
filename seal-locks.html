@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protective Materials – TP Global</title>
+<title>Seal & Locks – TP Global</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,32 +48,25 @@
   .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
   .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
   .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
-  .product-tabs { display: flex; gap: 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 40px; overflow-x: auto; }
-  .tab-btn { padding: 12px 22px; font-size: 0.9rem; font-weight: 600; color: #666; background: none; border: none; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; white-space: nowrap; }
-  .tab-btn:hover { color: #1c3557; }
-  .tab-btn.active { color: #c8391a; border-bottom-color: #c8391a; }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
-  .product-section { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
   .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
-  .product-img-box img { width: 100%; max-width: 220px; height: auto; object-fit: contain; }
-  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .product-img-box img { width: 100%; max-width: 200px; height: auto; object-fit: contain; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
   .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
-  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 28px; }
-  .spec-row { margin-bottom: 16px; }
-  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
-  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
   .specs-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c8391a; margin-bottom: 12px; display: block; }
   .specs-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; }
   .specs-table th { background: #1c3557; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; }
   .specs-table td { padding: 9px 14px; border-bottom: 1px solid #f0f0f0; color: #444; }
   .specs-table tr:last-child td { border-bottom: none; }
   .specs-table tr:nth-child(even) td { background: #f8f9fb; }
-  .info-box { background: #f0f6ff; border-left: 3px solid #1c3557; border-radius: 0 4px 4px 0; padding: 14px 18px; margin-bottom: 20px; font-size: 0.88rem; color: #1c3557; line-height: 1.6; }
-  .coming-soon { background: #f8f8f8; border: 1px dashed #ccc; border-radius: 6px; padding: 40px 24px; text-align: center; color: #888; font-size: 0.9rem; }
-  .coming-soon strong { display: block; color: #1c3557; font-size: 1rem; margin-bottom: 8px; }
-  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 24px; border: none; cursor: pointer; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
   .inquiry-btn:hover { background: #e04020; }
   .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
   .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
@@ -98,7 +91,7 @@
   @media (max-width: 768px) {
     .product-section { grid-template-columns: 1fr; }
     .product-img-box { position: static; }
-    .inquiry-form-inner { grid-template-columns: 1fr; }
+    .inquiry-form-inner { grid-column: 1fr; }
   }
 </style>
 </head>
@@ -180,7 +173,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="protective-materials.html" class="active">Protective Materials <span class="arrow">▼</span></a>
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
         <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
@@ -191,14 +184,14 @@
       </div>
     </div>
     <div class="nav-item">
-            <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+            <a href="warehouse-supplies.html" class="active">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="equipment-handling.html">Equipment Handling Tools</a>
         <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
         <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
         <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
         <a href="safety-supplies.html">Safety Supplies</a>
-        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="seal-locks.html" class="active">Seal &amp; Locks</a>
         <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
       </div>
     </div>
@@ -217,144 +210,148 @@
   <div class="breadcrumb-inner">
     <a href="index.html">Home</a>
     <span class="sep">›</span>
-    <span class="current">Protective Materials</span>
+    <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment</a>
+    <span class="sep">›</span>
+    <span class="current">Seal &amp; Locks</span>
   </div>
 </div>
 <div class="page-header">
   <div class="page-header-inner">
-    <h1>Protective Materials</h1>
-    <p>Foam rolls, polystyrene sheets, bubble wrap, corner protectors, and more — everything you need to protect your products during shipping and storage.</p>
+    <h1>Seal & Locks</h1>
+    <p>Security seals, locks, and tamper-evident products for containers, trailers, and cargo security.</p>
   </div>
 </div>
 <div class="main">
-  <div class="product-tabs">
-    <button class="tab-btn" id="btn-foam-rolls" onclick="switchTab('foam-rolls')">Foam Rolls</button>
-    <button class="tab-btn" id="btn-polystyrene" onclick="switchTab('polystyrene')">Polystyrene Sheets &amp; Molding</button>
-    <button class="tab-btn" id="btn-bubble-wrap" onclick="switchTab('bubble-wrap')">Bubble Wrap</button>
-    <button class="tab-btn" id="btn-corner" onclick="switchTab('corner')">Corner Protector</button>
-    <button class="tab-btn" id="btn-peanuts" onclick="switchTab('peanuts')">Peanuts</button>
-    <button class="tab-btn" id="btn-kraft" onclick="switchTab('kraft')">Kraft Paper</button>
-  </div>
 
-  <!-- FOAM ROLLS -->
-  <div class="tab-content" id="tab-foam-rolls">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="Foam_Roll.webp" alt="Foam Rolls">
-      </div>
-      <div class="product-info">
-        <h2>Foam Rolls</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">Polyethylene foam rolls for cushioning and surface protection during shipping and storage. Available in multiple thicknesses, slit to your required width from a 72" master roll.</p>
-        <div class="spec-row">
-          <div class="spec-row-label">Total Width</div>
-          <div class="tag-group"><span class="spec-tag">72" master roll</span></div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-row-label">Slit Options</div>
-          <div class="tag-group">
-            <span class="spec-tag">12"</span>
-            <span class="spec-tag">24"</span>
-            <span class="spec-tag">36"</span>
-            <span class="spec-tag">No slit</span>
-          </div>
-        </div>
-        <span class="specs-label">Stock Items</span>
-        <table class="specs-table">
-          <thead><tr><th>Thickness</th><th>Length</th></tr></thead>
-          <tbody>
-            <tr><td>1/8"</td><td>550'</td></tr>
-            <tr><td>1/16"</td><td>1,250'</td></tr>
-            <tr><td>1/32"</td><td>2,000'</td></tr>
-          </tbody>
-        </table>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>High Security Truck Steel Pin Seals</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Heavy-duty steel pin seals for securing truck doors and containers. Tamper-evident design ensures cargo integrity during transit.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- POLYSTYRENE -->
-  <div class="tab-content" id="tab-polystyrene">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="Polystyrene_Sheets.webp" alt="Polystyrene Sheets and Molding">
-      </div>
-      <div class="product-info">
-        <h2>Polystyrene Sheets and Molding</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">EPS (expanded polystyrene) foam boards and custom moldings for cushioning purposes. Lightweight yet highly protective, ideal for fragile items and temperature-sensitive shipments.</p>
-        <div class="spec-row">
-          <div class="spec-row-label">Stock Size</div>
-          <div class="tag-group"><span class="spec-tag">24" x 48" x 1/2"</span></div>
-        </div>
-        <div class="info-box">We custom make all shapes and sizes of sheets and moldings. Contact us with your dimensions and quantity requirements.</div>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>King Pin Lock for Semi Trailers — Heavy Duty</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Heavy-duty king pin lock to prevent unauthorized coupling of semi-trailers. Essential anti-theft device for parked trailers at loading docks and storage yards.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- BUBBLE WRAP -->
-  <div class="tab-content" id="tab-bubble-wrap">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="bubble-wrap.webp" alt="Bubble Wrap">
-      </div>
-      <div class="product-info">
-        <h2>Bubble Wrap</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">Bubble wrap for cushioning fragile items during shipping and storage. Available in multiple widths and bubble sizes. Contact us for current stock and pricing.</p>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Bar Lock for Containers</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Security bar lock for shipping containers. Provides a strong physical barrier against unauthorized access during storage and transport.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- CORNER PROTECTOR -->
-  <div class="tab-content" id="tab-corner">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="corner-protector.webp" alt="Corner Protector">
-      </div>
-      <div class="product-info">
-        <h2>Corner Protector</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">Cardboard and foam corner protectors for safeguarding edges and corners of furniture, appliances, and industrial equipment during shipping and handling. Contact us for sizes and pricing.</p>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Bar Lock for Containers — Economic</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Cost-effective bar lock for securing shipping containers. A reliable and affordable option for container security in warehouses and shipping yards.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- PEANUTS -->
-  <div class="tab-content" id="tab-peanuts">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="peanuts.webp" alt="Packing Peanuts">
-      </div>
-      <div class="product-info">
-        <h2>Packing Peanuts</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">Loose-fill packing peanuts for void fill and cushioning. Lightweight and effective at preventing movement inside boxes during transit. Contact us for current stock and pricing.</p>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Sure Lock Metal Seals — 100 Units</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Tamper-evident metal cable seals for securing containers, trailers, and cargo. Sold in packs of 100 units. Each seal is uniquely numbered for tracking and accountability.</p>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">100 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- KRAFT PAPER -->
-  <div class="tab-content" id="tab-kraft">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="kraft-paper.webp" alt="Kraft Paper">
-      </div>
-      <div class="product-info">
-        <h2>Kraft Paper</h2>
-        <span class="category-tag">Protective Materials</span>
-        <p class="desc">Heavy-duty kraft paper for wrapping, void fill, and surface protection. An eco-friendly alternative to bubble wrap and foam for many packaging applications. Contact us for roll sizes and pricing.</p>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Security Tape 2" × 180' — Serialized</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Serialized security tape that leaves a visible "VOID" message when removed, indicating tampering. Ideal for sealing packages, evidence bags, and secure shipments.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 180'</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Serialized</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Security Tape 2" × 164'</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Tamper-evident security tape for sealing packages and cartons. Leaves a clear tamper indicator when removed for enhanced cargo security.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 164'</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Pull-Up Seals — Security Tie for Courier Bags</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Plastic pull-up security ties for sealing courier bags and envelopes. Tamper-evident closure for secure document and parcel delivery.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>Metal Cable Seal — 3/16" × 62"</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Heavy-duty metal cable seal for securing container doors, trailer doors, and large cargo openings. Each seal is individually numbered for traceability.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">3/16" × 62"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>ToppClip Master Carton — 200 Units</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">ToppClip sealing tools for plastic or metal strapping. Master carton of 200 units for high-volume strapping operations.</p>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">200 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>ToppClip Starter Kit for Plastic or Metal Strapping</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Complete starter kit with ToppClip tools and clips for plastic or metal strapping applications. Everything needed to get started with ToppClip strapping seals.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🔒</div></div>
+    <div class="product-info">
+      <h2>5/8" Serrated Seals for HD Polyester Strapping</h2>
+      <span class="category-tag">Seal &amp; Locks</span>
+      <p class="desc">Heavy-duty serrated metal seals for 5/8" high-tensile polyester strapping. Serrated design provides a secure crimp for maximum holding strength.</p>
+      <div class="spec-row"><div class="spec-row-label">Compatible Width</div><div class="tag-group"><span class="spec-tag">5/8"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Serrated · HD Polyester</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
   <hr class="divider">
-
   <div class="inquiry-section" id="inquiry">
     <h2>Request a Price Inquiry</h2>
     <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
@@ -364,27 +361,15 @@
         <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
         <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
         <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
-        <div class="fg">
-          <label>Product</label>
-          <select>
-            <option>Foam Rolls</option>
-            <option>Polystyrene Sheets and Molding</option>
-            <option>Bubble Wrap</option>
-            <option>Corner Protector</option>
-            <option>Packing Peanuts</option>
-            <option>Kraft Paper</option>
-            <option>Multiple / Not Sure</option>
-          </select>
-        </div>
-        <div class="fg"><label>Specifications</label><input type="text" placeholder='e.g. 1/8" thickness, 12" wide'></div>
-        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Quantity, dimensions, or any other questions..." required></textarea></div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="Product name"></div>
+        <div class="fg"><label>Quantity</label><input type="text" placeholder="e.g. 10 units"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Specifications or any other questions..." required></textarea></div>
         <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
         <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
       </div>
     </form>
   </div>
 </div>
-
 <footer>
   <p>
     © 2026 TP Global — Industrial Packaging Solutions
@@ -393,32 +378,15 @@
     <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
   </p>
 </footer>
-
 <script>
-  function switchTab(tab) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
-    document.getElementById('btn-' + tab).classList.add('active');
-  }
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    var tab = params.get('tab');
-    if (tab && document.getElementById('tab-' + tab)) {
-      switchTab(tab);
-    } else {
-      switchTab('foam-rolls');
-    }
-  })();
   document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var inputs = this.querySelectorAll('input, select, textarea');
     var name = inputs[0].value, company = inputs[1].value;
     var email = inputs[2].value, phone = inputs[3].value;
-    var product = inputs[4].value, specs = inputs[5].value;
-    var message = inputs[6].value;
-    var subject = encodeURIComponent('Protective Materials Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
-    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + product + '\nSpecs: ' + (specs||'N/A') + '\n\nMessage:\n' + message);
+    var product = inputs[4].value, qty = inputs[5].value, message = inputs[6].value;
+    var subject = encodeURIComponent('Seal & Locks Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
+    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + (product||'N/A') + '\nQty: ' + (qty||'N/A') + '\n\nMessage:\n' + message);
     window.location.href = 'mailto:frank@packmarts.com?subject=' + subject + '&body=' + body;
     document.getElementById('successMsg').style.display = 'block';
     this.reset();

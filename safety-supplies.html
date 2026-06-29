@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strapping Products – TP Global</title>
+<title>Safety Supplies – TP Global</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
-
   .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
   .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   .topbar a { color: #ccc; text-decoration: none; }
   .topbar a:hover { color: #fff; }
   .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
-
   header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
   .header-right { display: flex; align-items: center; gap: 20px; }
@@ -26,7 +24,6 @@
   .header-contact { text-align: right; }
   .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
   .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
-
   nav { background: #1c3557; position: relative; z-index: 99; }
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
   .nav-item { position: relative; }
@@ -35,60 +32,43 @@
   .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
   .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
   .nav-item:hover > a .arrow { transform: rotate(180deg); }
-  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 220px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
   .nav-item:hover .dropdown { display: block; }
   .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
   .dropdown a:last-child { border-bottom: none; }
-  .dropdown a:hover { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
-
+  .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
   .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
   .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
   .breadcrumb a { color: #888; text-decoration: none; }
   .breadcrumb a:hover { color: #c8391a; }
   .breadcrumb .sep { color: #ccc; }
   .breadcrumb .current { color: #1c3557; font-weight: 600; }
-
   .page-header { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 40px 24px; }
   .page-header-inner { max-width: 1200px; margin: 0 auto; }
   .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
   .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
-
   .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
-
-  .product-tabs { display: flex; gap: 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 40px; }
-  .tab-btn { padding: 12px 28px; font-size: 0.9rem; font-weight: 600; color: #666; background: none; border: none; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; white-space: nowrap; }
-  .tab-btn:hover { color: #1c3557; }
-  .tab-btn.active { color: #c8391a; border-bottom-color: #c8391a; }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
-
-  .product-section { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
   .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
-  .product-img-box img { width: 100%; max-width: 220px; height: auto; object-fit: contain; }
-
-  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .product-img-box img { width: 100%; max-width: 200px; height: auto; object-fit: contain; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
   .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
-  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 28px; }
-
-  .spec-row { margin-bottom: 16px; }
-  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
-  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
-  .spec-tag.type-green { background: #f0faf0; border-color: #86efac; color: #166534; }
-  .spec-tag.type-black { background: #f4f4f4; border-color: #aaa; color: #222; }
-
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
   .specs-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c8391a; margin-bottom: 12px; display: block; }
   .specs-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 24px; }
   .specs-table th { background: #1c3557; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.8rem; }
   .specs-table td { padding: 9px 14px; border-bottom: 1px solid #f0f0f0; color: #444; }
   .specs-table tr:last-child td { border-bottom: none; }
   .specs-table tr:nth-child(even) td { background: #f8f9fb; }
-
-  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 24px; border: none; cursor: pointer; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
   .inquiry-btn:hover { background: #e04020; }
-
   .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
-
   .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
   .inquiry-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
   .inquiry-section > p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 28px; }
@@ -104,22 +84,18 @@
   .form-submit { background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; }
   .form-submit:hover { background: #e04020; }
   .success-msg { display: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; border-radius: 4px; padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px; grid-column: 1/-1; text-align: center; }
-
   footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
   footer a { color: #888; text-decoration: none; }
   footer a:hover { color: #fff; }
   footer span { margin: 0 10px; }
-
   @media (max-width: 768px) {
     .product-section { grid-template-columns: 1fr; }
     .product-img-box { position: static; }
-    .inquiry-form-inner { grid-template-columns: 1fr; }
-    .product-tabs { overflow-x: auto; }
+    .inquiry-form-inner { grid-column: 1fr; }
   }
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-left">
@@ -131,7 +107,6 @@
     </div>
   </div>
 </div>
-
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
@@ -147,7 +122,6 @@
     </div>
   </div>
 </header>
-
 <nav>
   <div class="nav-inner">
     <div class="nav-item">
@@ -166,17 +140,17 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="index.html#products">Stretch Film <span class="arrow">▼</span></a>
+      <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="index.html#inquiry">Sigma Blown Stretch Film</a>
-        <a href="index.html#inquiry">TPLUX Premium Cast Film</a>
-        <a href="index.html#inquiry">Machine Grade Film</a>
-        <a href="index.html#inquiry">Color Film</a>
-        <a href="index.html#inquiry">Banding Film</a>
+        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
+        <a href="stretch-film.html?tab=color">Color Film</a>
+        <a href="stretch-film.html?tab=banding">Banding Film</a>
       </div>
     </div>
     <div class="nav-item">
-      <a href="strapping-products.html" class="active">Strapping Products <span class="arrow">▼</span></a>
+      <a href="strapping-products.html">Strapping Products <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
@@ -184,12 +158,12 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="index.html#products">Bags / Mailers <span class="arrow">▼</span></a>
+      <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="index.html#inquiry">Poly Bag</a>
-        <a href="index.html#inquiry">Mailer</a>
-        <a href="index.html#inquiry">Bubble Mailers</a>
-        <a href="index.html#inquiry">Woven Sacks</a>
+        <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
+        <a href="bags-mailers.html?tab=mailer">Mailer</a>
+        <a href="bags-mailers.html?tab=mailer">Bubble Mailers</a>
+        <a href="bags-mailers.html?tab=woven">Woven Sacks</a>
       </div>
     </div>
     <div class="nav-item">
@@ -199,23 +173,24 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="index.html#products">Protective Materials <span class="arrow">▼</span></a>
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="index.html#inquiry">Bubble Wrap</a>
-        <a href="index.html#inquiry">Corner Protector</a>
-        <a href="index.html#inquiry">Peanuts</a>
-        <a href="index.html#inquiry">Foam</a>
-        <a href="index.html#inquiry">Kraft Paper</a>
+        <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
+        <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
+        <a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a>
+        <a href="protective-materials.html?tab=corner">Corner Protector</a>
+        <a href="protective-materials.html?tab=peanuts">Peanuts</a>
+        <a href="protective-materials.html?tab=kraft">Kraft Paper</a>
       </div>
     </div>
     <div class="nav-item">
-            <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+            <a href="warehouse-supplies.html" class="active">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="equipment-handling.html">Equipment Handling Tools</a>
         <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
         <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
         <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
-        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="safety-supplies.html" class="active">Safety Supplies</a>
         <a href="seal-locks.html">Seal &amp; Locks</a>
         <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
       </div>
@@ -231,159 +206,114 @@
     </div>
   </div>
 </nav>
-
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
     <a href="index.html">Home</a>
     <span class="sep">›</span>
-    <span class="current">Strapping Products</span>
+    <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment</a>
+    <span class="sep">›</span>
+    <span class="current">Safety Supplies</span>
   </div>
 </div>
-
 <div class="page-header">
   <div class="page-header-inner">
-    <h1>Strapping Products</h1>
-    <p>Polyester, polypropylene, and steel strapping solutions for industrial bundling, pallet securing, and freight applications.</p>
+    <h1>Safety Supplies</h1>
+    <p>Personal protective equipment and safety products to keep your warehouse team protected and operations compliant.</p>
   </div>
 </div>
-
 <div class="main">
 
-  <div class="product-tabs">
-    <button class="tab-btn" id="btn-polyester" onclick="switchTab('polyester')">Polyester Strapping</button>
-    <button class="tab-btn" id="btn-polypropylene" onclick="switchTab('polypropylene')">Polypropylene Strapping</button>
-    <button class="tab-btn" id="btn-steel" onclick="switchTab('steel')">Steel Strapping</button>
-  </div>
-
-  <!-- POLYESTER -->
-  <div class="tab-content" id="tab-polyester">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="polyester-strapping.webp" alt="Polyester Strapping">
-      </div>
-      <div class="product-info">
-        <h2>Polyester Strapping</h2>
-        <span class="category-tag">Strapping Products</span>
-        <p class="desc">High-tensile polyester strapping for heavy-duty industrial bundling and pallet securing. Available in green smooth, green embossed, and black smooth finishes.</p>
-
-        <div class="spec-row">
-          <div class="spec-row-label">Length (ft)</div>
-          <div class="tag-group">
-            <span class="spec-tag">4000</span>
-            <span class="spec-tag">4200</span>
-            <span class="spec-tag">4400</span>
-            <span class="spec-tag">5800</span>
-            <span class="spec-tag">6000</span>
-            <span class="spec-tag">6500</span>
-          </div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-row-label">Thickness</div>
-          <div class="tag-group">
-            <span class="spec-tag">.025"</span>
-            <span class="spec-tag">.026"</span>
-            <span class="spec-tag">.027"</span>
-            <span class="spec-tag">.028"</span>
-            <span class="spec-tag">.035"</span>
-          </div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-row-label">Width</div>
-          <div class="tag-group">
-            <span class="spec-tag">1/2"</span>
-            <span class="spec-tag">5/8"</span>
-          </div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-row-label">Core Size</div>
-          <div class="tag-group">
-            <span class="spec-tag">16/6</span>
-          </div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-row-label">Type</div>
-          <div class="tag-group">
-            <span class="spec-tag type-green">Green Smooth</span>
-            <span class="spec-tag type-green">Green Embossed</span>
-            <span class="spec-tag type-black">Black Smooth</span>
-          </div>
-        </div>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Cotton Plain Knit Gloves — Large, 1 Pair</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Lightweight white cotton gloves for general warehouse handling. Provides basic hand protection while maintaining dexterity for sorting, packing, and light assembly tasks.</p>
+      <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Cotton</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">Large</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">White</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- POLYPROPYLENE -->
-  <div class="tab-content" id="tab-polypropylene">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="black_poly.webp" alt="Polypropylene Strapping">
-      </div>
-      <div class="product-info">
-        <h2>Polypropylene Strapping</h2>
-        <span class="category-tag">Strapping Products</span>
-        <p class="desc">Lightweight and flexible polypropylene strapping for light to medium duty bundling applications. Available in multiple widths and coil lengths.</p>
-
-        <span class="specs-label">Specifications</span>
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Width</th>
-              <th>Feet Per Coil</th>
-              <th>Break Strength (lbs)</th>
-              <th>Core Size</th>
-              <th>Finish</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1/2"</td><td>7,200</td><td>600</td><td>16 x 6</td><td>Embossed</td></tr>
-            <tr><td>1/2"</td><td>9,900</td><td>400</td><td>8 x 8</td><td>Embossed</td></tr>
-            <tr><td>3/8"</td><td>12,900</td><td>300</td><td>8 x 8</td><td>Embossed</td></tr>
-          </tbody>
-        </table>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Black Dot Knit Gloves — Large, 1 Pair</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Knit gloves with black PVC dot coating on both sides for improved grip. Ideal for handling boxes, cartons, and slippery materials in warehouse environments.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">Large</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Coating</div><div class="tag-group"><span class="spec-tag">PVC Dot — Two Sides</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
-  <!-- STEEL -->
-  <div class="tab-content" id="tab-steel">
-    <div class="product-section">
-      <div class="product-img-box">
-        <img src="steel-strapping.webp" alt="Steel Strapping">
-      </div>
-      <div class="product-info">
-        <h2>Steel Strapping</h2>
-        <span class="category-tag">Strapping Products</span>
-        <p class="desc">Heavy-duty steel strapping for the most demanding industrial applications — bundling metals, roll end binding, pavers, bricks, baling wire, steel coils, and clothing bales.</p>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>2-Piece Economy Rain Suit</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Practical and affordable two-piece rain suit with detachable hood, snap front closure, and adjustable wrist and ankle closures for a secure, dry fit. Ideal for outdoor warehouse and loading dock work.</p>
+      <span class="specs-label">Specifications</span>
+      <table class="specs-table">
+        <thead><tr><th>Color</th><th>Size</th></tr></thead>
+        <tbody>
+          <tr><td>Yellow</td><td>Large</td></tr>
+          <tr><td>Yellow</td><td>X-Large</td></tr>
+        </tbody>
+      </table>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
 
-        <span class="specs-label">Specifications</span>
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Width</th>
-              <th>Feet Per Coil</th>
-              <th>Thickness</th>
-              <th>Break Strength (lbs)</th>
-              <th>Core Size</th>
-              <th>Finish</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1/2"</td><td>3,000</td><td>0.020"</td><td>1,200</td><td>16 x 6</td><td>Black Painted & Waxed</td></tr>
-            <tr><td>1/2"</td><td>2,650</td><td>0.023"</td><td>1,350</td><td>16 x 6</td><td>Black Painted & Waxed</td></tr>
-            <tr><td>5/8"</td><td>2,150</td><td>0.023"</td><td>1,700</td><td>16 x 6</td><td>Black Painted & Waxed</td></tr>
-            <tr><td>3/4"</td><td>1,750</td><td>0.023"</td><td>2,000</td><td>16 x 6</td><td>Black Painted & Waxed</td></tr>
-            <tr><td>1-1/4"</td><td>830</td><td>0.031"</td><td>5,500</td><td>16 x 6</td><td>High Tensile — Black Painted & Waxed</td></tr>
-          </tbody>
-        </table>
-        <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
-      </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Economy Back Support Belt with Suspender</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Ergonomic back support belt with suspenders for warehouse workers who lift and move heavy items frequently. Provides lumbar support to reduce fatigue and injury risk.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Latex Coated Knitted Gloves — 6 Pairs (DOZ)</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Knitted gloves with blue latex coating for superior grip and protection. Sold in packs of 6 pairs. Suitable for general warehouse use, construction, and outdoor tasks.</p>
+      <div class="spec-row"><div class="spec-row-label">Coating</div><div class="tag-group"><span class="spec-tag">Latex</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">6 Pairs</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Black Nitrile Disposable Powder-Free Gloves</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Powder-free black nitrile disposable gloves for protection against chemicals, oils, and contaminants. Suitable for warehouse, industrial, and food handling applications.</p>
+      <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Nitrile</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Black</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Disposable · Powder-Free</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🦺</div></div>
+    <div class="product-info">
+      <h2>Security Tape — "Stop / Check Contents" 2" × 110 Yds</h2>
+      <span class="category-tag">Safety Supplies</span>
+      <p class="desc">Red and white printed security tape for marking inspected or restricted areas. Printed with "Stop / Check Contents" warning for use on packages and cartons requiring inspection.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 110 Yds</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Red / White</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
   <hr class="divider">
-
   <div class="inquiry-section" id="inquiry">
     <h2>Request a Price Inquiry</h2>
     <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
@@ -393,25 +323,15 @@
         <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
         <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
         <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
-        <div class="fg">
-          <label>Product</label>
-          <select>
-            <option>Polyester Strapping</option>
-            <option>Polypropylene Strapping</option>
-            <option>Steel Strapping</option>
-            <option>Multiple / Not Sure</option>
-          </select>
-        </div>
-        <div class="fg"><label>Specifications</label><input type="text" placeholder='e.g. 1/2", 4000ft, Green Smooth'></div>
-        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Quantity, application, or any other questions..." required></textarea></div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="Product name"></div>
+        <div class="fg"><label>Quantity</label><input type="text" placeholder="e.g. 10 units"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Specifications or any other questions..." required></textarea></div>
         <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
         <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
       </div>
     </form>
   </div>
-
 </div>
-
 <footer>
   <p>
     © 2026 TP Global — Industrial Packaging Solutions
@@ -420,35 +340,15 @@
     <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
   </p>
 </footer>
-
 <script>
-  function switchTab(tab) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
-    document.getElementById('btn-' + tab).classList.add('active');
-  }
-
-  // Read URL query parameter ?tab=xxx to switch tab on load
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    var tab = params.get('tab');
-    if (tab && document.getElementById('tab-' + tab)) {
-      switchTab(tab);
-    } else {
-      switchTab('polyester');
-    }
-  })();
-
   document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var inputs = this.querySelectorAll('input, select, textarea');
     var name = inputs[0].value, company = inputs[1].value;
     var email = inputs[2].value, phone = inputs[3].value;
-    var product = inputs[4].value, specs = inputs[5].value;
-    var message = inputs[6].value;
-    var subject = encodeURIComponent('Strapping Products Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
-    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + product + '\nSpecs: ' + (specs||'N/A') + '\n\nMessage:\n' + message);
+    var product = inputs[4].value, qty = inputs[5].value, message = inputs[6].value;
+    var subject = encodeURIComponent('Safety Supplies Inquiry' + (name ? ' from ' + name : '') + (company ? ' \u2013 ' + company : ''));
+    var body = encodeURIComponent('Name: ' + name + '\nCompany: ' + (company||'N/A') + '\nEmail: ' + email + '\nPhone: ' + (phone||'N/A') + '\nProduct: ' + (product||'N/A') + '\nQty: ' + (qty||'N/A') + '\n\nMessage:\n' + message);
     window.location.href = 'mailto:frank@packmarts.com?subject=' + subject + '&body=' + body;
     document.getElementById('successMsg').style.display = 'block';
     this.reset();

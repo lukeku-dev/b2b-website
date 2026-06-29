@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janitorial Paper & Dispensers – TP Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
+  .topbar { background: #2c2c2c; color: #ccc; font-size: 0.8rem; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .topbar a { color: #ccc; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar-left, .topbar-right { display: flex; gap: 24px; align-items: center; }
+  header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-cta { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .header-cta:hover { background: #e04020; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 52px; width: auto; }
+  .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
+  .header-contact { text-align: right; }
+  .header-contact .phone { font-size: 1.3rem; font-weight: 700; color: #1c3557; }
+  .header-contact .hours { font-size: 0.75rem; color: #888; margin-top: 2px; }
+  nav { background: #1c3557; position: relative; z-index: 99; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+  .nav-item { position: relative; }
+  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.76rem; font-weight: 500; padding: 13px 10px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
+  .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
+  .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+  .nav-item:hover > a .arrow { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #c8391a; min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 200; }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
+  .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  .breadcrumb a:hover { color: #c8391a; }
+  .breadcrumb .sep { color: #ccc; }
+  .breadcrumb .current { color: #1c3557; font-weight: 600; }
+  .page-header { background: linear-gradient(135deg, #1c3557 0%, #0f2035 100%); padding: 40px 24px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; max-width: 600px; }
+  .main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+  .product-section { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #e8e8e8; }
+  .product-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .product-img-box { border: 1px solid #e8e8e8; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; padding: 32px; position: sticky; top: 100px; }
+  .product-img-box .placeholder { font-size: 4rem; color: #ddd; }
+  .product-info h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #1c3557; margin-bottom: 8px; }
+  .category-tag { display: inline-block; background: #f0f6ff; color: #1c3557; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
+  .desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
+  .spec-row { margin-bottom: 14px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; }
+  .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
+  .inquiry-btn:hover { background: #e04020; }
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
+  .inquiry-section { background: #1c3557; border-radius: 8px; padding: 40px; margin-top: 48px; }
+  .inquiry-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .inquiry-section > p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 28px; }
+  .inquiry-form-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fg { display: flex; flex-direction: column; gap: 5px; }
+  .fg.full { grid-column: 1 / -1; }
+  .fg label { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; text-transform: uppercase; }
+  .fg input, .fg select, .fg textarea { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 10px 13px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #fff; outline: none; transition: border-color 0.2s; }
+  .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .fg input:focus, .fg textarea:focus { border-color: #f0a040; }
+  .fg textarea { resize: vertical; min-height: 100px; }
+  .form-submit { background: #c8391a; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: #e04020; }
+  .success-msg { display: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; border-radius: 4px; padding: 12px 16px; font-size: 0.85rem; font-weight: 500; margin-top: 12px; grid-column: 1/-1; text-align: center; }
+  footer { background: #111; color: #666; font-size: 0.82rem; padding: 24px; text-align: center; }
+  footer a { color: #888; text-decoration: none; }
+  footer a:hover { color: #fff; }
+  footer span { margin: 0 10px; }
+  @media (max-width: 768px) {
+    .product-section { grid-template-columns: 1fr; }
+    .inquiry-form-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 545 W 17th St, Hialeah, FL 33010</span>
+      <span>Mon–Fri: 9AM – 6PM EST</span>
+    </div>
+    <div class="topbar-right">
+      <a href="mailto:frank@packmarts.com">✉ frank@packmarts.com</a>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="TP Global">
+      <div class="logo-tagline">Industrial Packaging Solutions</div>
+    </a>
+    <div class="header-right">
+      <div class="header-contact">
+        <div class="phone">(305) 778-6289</div>
+        <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+      </div>
+      <a href="#inquiry" class="header-cta">Request a Quote</a>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="index.html#inquiry">Artist Tape</a>
+        <a href="index.html#inquiry">Carton Sealing Tape</a>
+        <a href="index.html#inquiry">Duct Tape</a>
+        <a href="index.html#inquiry">Filament Tape</a>
+        <a href="index.html#inquiry">Gaffer Tape</a>
+        <a href="index.html#inquiry">Gum Tape</a>
+        <a href="index.html#inquiry">Masking Tape</a>
+        <a href="index.html#inquiry">Painters Tape</a>
+        <a href="index.html#inquiry">Strapping Tape</a>
+        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
+        <a href="stretch-film.html?tab=color">Color Film</a>
+        <a href="stretch-film.html?tab=banding">Banding Film</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="strapping-products.html">Strapping Products <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
+        <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
+        <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
+        <a href="bags-mailers.html?tab=mailer">Mailer</a>
+        <a href="bags-mailers.html?tab=mailer">Bubble Mailers</a>
+        <a href="bags-mailers.html?tab=woven">Woven Sacks</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="cardboard-box.html">Corrugated Boxes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="cardboard-box.html">Cardboard Box</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="protective-materials.html">Protective Materials <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="protective-materials.html?tab=foam-rolls">Foam Rolls</a>
+        <a href="protective-materials.html?tab=polystyrene">Polystyrene Sheets &amp; Molding</a>
+        <a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a>
+        <a href="protective-materials.html?tab=corner">Corner Protector</a>
+        <a href="protective-materials.html?tab=peanuts">Peanuts</a>
+        <a href="protective-materials.html?tab=kraft">Kraft Paper</a>
+      </div>
+    </div>
+    <div class="nav-item">
+            <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="equipment-handling.html">Equipment Handling Tools</a>
+        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
+        <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
+        <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
+        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
+      </div>
+    </div>
+    <div class="nav-item">
+            <a href="janitorial-cleaning.html" class="active">Janitorial &amp; Cleaning Supplies <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="breakroom-supplies.html">Breakroom Supplies</a>
+        <a href="cleaning-supplies.html">Cleaning Supplies</a>
+        <a href="trash-bags.html">Trash Bags</a>
+        <a href="janitorial-paper.html" class="active">Janitorial Paper &amp; Dispensers</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="janitorial-cleaning.html">Janitorial &amp; Cleaning Supplies</a>
+    <span class="sep">›</span>
+    <span class="current">Janitorial Paper &amp; Dispensers</span>
+  </div>
+</div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Janitorial Paper & Dispensers</h1>
+    <p>Paper towels, toilet tissue, dispensers, and foam cups for commercial restroom and breakroom supply needs.</p>
+  </div>
+</div>
+<div class="main">
+
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Center Pull Towel 2-Ply — 450', 600 Units</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">High-quality 2-ply center pull paper towels for restroom and breakroom dispensers. 450 feet per roll, case of 600 units.</p>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Length</div><div class="tag-group"><span class="spec-tag">450'</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Economy Toilet Tissue — Bathroom Tissue 500 Sheets</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Economy bathroom tissue for high-traffic commercial restrooms. 500 sheets per roll for extended use between changes.</p>
+      <div class="spec-row"><div class="spec-row-label">Sheets per Roll</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Hardwound Roll Towels</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Hardwound paper towel rolls for wall-mounted dispensers. Ideal for commercial restrooms and breakrooms requiring controlled towel dispensing.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>2-Ply Tissue 4" × 3.1" — 500 Sheets</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">High-quality 2-ply bathroom tissue in standard size. 500 sheets per roll for commercial restroom use.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4" × 3.1"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Sheets</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>2-Ply Jumbo Tissue Roll</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">2-ply jumbo toilet tissue roll for high-traffic commercial restrooms. Large roll size reduces change frequency and maintenance time.</p>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Jumbo Roll</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Half-Fold Toilet Seat Cover — 15" × 10.125", 20 Packs</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Half-fold disposable toilet seat covers for commercial restrooms. Case of 20 packs for high-traffic facilities.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">15" × 10.125"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">20 packs</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Multifold Paper Towels</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Multifold paper towels for C-fold and multifold dispensers in commercial restrooms and breakrooms. Absorbent and durable for everyday hand drying.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>Center Fold Towel 10" × 12" — 1-Ply</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">1-ply center fold paper towels for standard restroom dispensers. 10" × 12" size for reliable hand drying in commercial facilities.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">10" × 12"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">1-Ply</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>2-Ply Paper Towels — 30 Units</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Soft and absorbent 2-ply paper towels for breakrooms and restrooms. Case of 30 units for ongoing supply.</p>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">30 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Double Bath Tissue Dispenser</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Wall-mounted double roll bathroom tissue dispenser for commercial restrooms. Holds two standard rolls to reduce restocking frequency.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Single Jr. Jumbo Tissue Dispenser — 12", Smoke</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Single Jr. Jumbo tissue dispenser for 12" jumbo rolls. Smoke-colored cover for a modern commercial restroom look.</p>
+      <div class="spec-row"><div class="spec-row-label">Roll Size</div><div class="tag-group"><span class="spec-tag">12"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Single Jr. Jumbo Tissue Dispenser — 9", Smoke</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Single Jr. Jumbo tissue dispenser for 9" jumbo rolls. Smoke-colored cover for commercial restroom installations.</p>
+      <div class="spec-row"><div class="spec-row-label">Roll Size</div><div class="tag-group"><span class="spec-tag">9"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Twin Jumbo Tissue Dispenser — Smoke Black</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Twin jumbo tissue dispenser holding two large rolls simultaneously. Smoke black finish for commercial restrooms. Minimizes restocking with high-capacity dual-roll design.</p>
+      <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke Black</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">Twin Roll</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🧻</div></div>
+    <div class="product-info">
+      <h2>High Quality Toilet Tissue 2-Ply — 3 15/16" × 3.5", 500 Sheets</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Premium 2-ply toilet tissue for commercial restrooms. 500 sheets per roll in standard size for consistent quality.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">3 15/16" × 3.5"</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Sheets</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Touchless Hardwound Roll Towel Dispenser — 7.5"/8.25"</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Touchless automatic paper towel dispenser for hygienic hand drying in commercial restrooms. Compatible with 7.5" and 8.25" hardwound roll towels.</p>
+      <div class="spec-row"><div class="spec-row-label">Roll Compatibility</div><div class="tag-group"><span class="spec-tag">7.5"</span><span class="spec-tag">8.25"</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🥤</div></div>
+    <div class="product-info">
+      <h2>8 Oz Foam Cup — 1,000 Units</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Insulated 8 Oz foam cups for hot and cold beverages. Case of 1,000 units for breakrooms and cafeteria service.</p>
+      <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8 Oz</span></div></div>
+      <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+  <div class="product-section">
+    <div class="product-img-box"><div class="placeholder">🗑️</div></div>
+    <div class="product-info">
+      <h2>Bump Bar Roll Towel Dispenser</h2>
+      <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
+      <p class="desc">Bump-bar activated roll towel dispenser for touchless paper dispensing in commercial restrooms. Hygienic operation for high-traffic facilities.</p>
+      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="inquiry-section" id="inquiry">
+    <h2>Request a Price Inquiry</h2>
+    <p>Tell us what you need and we'll get back to you within 24–48 business hours.</p>
+    <form id="inquiryForm">
+      <div class="inquiry-form-inner">
+        <div class="fg"><label>Your Name *</label><input type="text" placeholder="John Smith" required></div>
+        <div class="fg"><label>Company Name</label><input type="text" placeholder="ABC Company LLC"></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(305) 000-0000"></div>
+        <div class="fg"><label>Product</label><input type="text" placeholder="Product name"></div>
+        <div class="fg"><label>Quantity</label><input type="text" placeholder="e.g. 10 cases"></div>
+        <div class="fg full"><label>Message / Additional Details *</label><textarea placeholder="Specifications or any other questions..." required></textarea></div>
+        <div class="fg full"><button type="submit" class="form-submit">Submit Inquiry</button></div>
+        <div class="success-msg" id="successMsg">✅ Your inquiry has been sent! We'll respond within 24–48 business hours.</div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>© 2026 TP Global — Industrial Packaging Solutions
+    <span>|</span> 545 W 17th St, Hialeah, FL 33010
+    <span>|</span> <a href="tel:3057786289">(305) 778-6289</a>
+    <span>|</span> <a href="mailto:frank@packmarts.com">frank@packmarts.com</a>
+  </p>
+</footer>
+<script>
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var inputs = this.querySelectorAll('input, textarea');
+    var name=inputs[0].value, company=inputs[1].value, email=inputs[2].value, phone=inputs[3].value, product=inputs[4].value, qty=inputs[5].value, message=inputs[6].value;
+    var subject = encodeURIComponent('Janitorial Paper & Dispensers Inquiry' + (name?' from '+name:'') + (company?' \u2013 '+company:''));
+    var body = encodeURIComponent('Name: '+name+'\nCompany: '+(company||'N/A')+'\nEmail: '+email+'\nPhone: '+(phone||'N/A')+'\nProduct: '+(product||'N/A')+'\nQty: '+(qty||'N/A')+'\n\nMessage:\n'+message);
+    window.location.href='mailto:frank@packmarts.com?subject='+subject+'&body='+body;
+    document.getElementById('successMsg').style.display='block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

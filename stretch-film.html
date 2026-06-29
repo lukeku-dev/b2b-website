@@ -17,6 +17,9 @@
 
   header { background: #fff; border-bottom: 3px solid #c8391a; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-cta { background: #c8391a; color: #fff; font-weight: 600; font-size: 0.82rem; padding: 9px 18px; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .header-cta:hover { background: #e04020; }
   .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .logo img { height: 52px; width: auto; }
   .logo-tagline { font-size: 0.72rem; color: #666; line-height: 1.4; max-width: 140px; }
@@ -27,7 +30,7 @@
   nav { background: #1c3557; position: relative; z-index: 99; }
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
   .nav-item { position: relative; }
-  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 13px 16px; display: flex; align-items: center; gap: 5px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .nav-item > a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.76rem; font-weight: 500; padding: 13px 10px; display: flex; align-items: center; gap: 4px; transition: all 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
   .nav-item > a:hover { color: #fff; background: rgba(255,255,255,0.07); border-bottom-color: #c8391a; }
   .nav-item > a.active { border-bottom-color: #c8391a; color: #fff; }
   .nav-item > a .arrow { font-size: 0.6rem; transition: transform 0.2s; }
@@ -37,8 +40,6 @@
   .dropdown a { display: block; padding: 10px 18px; font-size: 0.85rem; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: all 0.15s; }
   .dropdown a:last-child { border-bottom: none; }
   .dropdown a:hover, .dropdown a.active { background: #f5f8ff; color: #c8391a; padding-left: 24px; }
-  .nav-inquiry { margin-left: auto; background: #c8391a !important; color: #fff !important; font-weight: 600 !important; border-bottom: none !important; }
-  .nav-inquiry:hover { background: #e04020 !important; }
 
   .breadcrumb { background: #f8f8f8; border-bottom: 1px solid #e8e8e8; padding: 12px 24px; }
   .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
@@ -135,9 +136,12 @@
       <img src="logo.png" alt="TP Global">
       <div class="logo-tagline">Industrial Packaging Solutions</div>
     </a>
-    <div class="header-contact">
-      <div class="phone">(305) 778-6289</div>
-      <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+    <div class="header-right">
+      <div class="header-contact">
+        <div class="phone">(305) 778-6289</div>
+        <div class="hours">Mon – Fri &nbsp;9AM – 6PM EST</div>
+      </div>
+      <a href="#inquiry" class="header-cta">Request a Quote</a>
     </div>
   </div>
 </header>
@@ -203,9 +207,26 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="index.html#inquiry">Office Supplies</a>
+            <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="equipment-handling.html">Equipment Handling Tools</a>
+        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
+        <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
+        <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
+        <a href="safety-supplies.html">Safety Supplies</a>
+        <a href="seal-locks.html">Seal &amp; Locks</a>
+        <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
+      </div>
     </div>
-    <a href="#inquiry" class="nav-inquiry">Request a Quote</a>
+    <div class="nav-item">
+      <a href="janitorial-cleaning.html">Janitorial &amp; Cleaning Supplies <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="breakroom-supplies.html">Breakroom Supplies</a>
+        <a href="cleaning-supplies.html">Cleaning Supplies</a>
+        <a href="trash-bags.html">Trash Bags</a>
+        <a href="janitorial-paper.html">Janitorial Paper &amp; Dispensers</a>
+      </div>
+    </div>
   </div>
 </nav>
 
