@@ -84,6 +84,74 @@
     .product-section { grid-template-columns: 1fr; }
     .inquiry-form-inner { grid-template-columns: 1fr; }
   }
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav { display: none; background: #1c3557; padding: 8px 0; }
+  .mobile-nav.open { display: block; }
+  .mobile-nav a { display: block; color: rgba(255,255,255,0.85); text-decoration: none; padding: 10px 24px; font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .mobile-nav a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+  .mobile-nav .mobile-section { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 12px 24px 4px; }
+  .mobile-nav .mobile-sub { padding-left: 36px; font-size: 0.84rem; }
+
+  @media (max-width: 900px) {
+    /* Hide desktop nav, show hamburger */
+    .nav-inner { justify-content: space-between; }
+    .nav-item { display: none; }
+    .hamburger { display: flex; }
+
+    /* Header */
+    .header-inner { height: auto; padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+    .logo img { height: 40px; }
+    .header-right { gap: 10px; }
+    .header-cta { font-size: 0.78rem; padding: 7px 12px; }
+    .header-contact .phone { font-size: 1rem; }
+
+    /* Topbar */
+    .topbar-inner { flex-direction: column; align-items: flex-start; gap: 2px; }
+
+    /* Page header */
+    .page-header h1 { font-size: 1.4rem; }
+    .page-header p { font-size: 0.88rem; }
+
+    /* Product sections */
+    .product-section { grid-template-columns: 1fr !important; gap: 24px; }
+    .product-img-box { position: static !important; max-width: 220px; margin: 0 auto; }
+
+    /* Tabs */
+    .product-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tab-btn { padding: 10px 14px; font-size: 0.8rem; }
+
+    /* Inquiry form */
+    .inquiry-form-inner { grid-template-columns: 1fr !important; }
+    .fg.full { grid-column: 1 !important; }
+    .inquiry-section { padding: 24px 16px; }
+
+    /* Main padding */
+    .main { padding: 24px 16px; }
+    .breadcrumb-inner { flex-wrap: wrap; }
+
+    /* Specs table */
+    .specs-table, .spec-table { font-size: 0.78rem; }
+    .specs-table th, .spec-table th { padding: 8px; }
+    .specs-table td, .spec-table td { padding: 7px 8px; }
+
+    /* Index hero */
+    .hero { padding: 40px 16px; }
+    .hero h1 { font-size: 1.8rem; }
+    .stats { flex-wrap: wrap; }
+    .stat { min-width: 40%; }
+    .prod-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .prod-grid { grid-template-columns: 1fr; }
+    .header-contact .phone { font-size: 0.95rem; }
+  }
 </style>
 </head>
 <body>
@@ -115,6 +183,10 @@
 </header>
 <nav>
   <div class="nav-inner">
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
     <div class="nav-item">
       <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -196,6 +268,56 @@
       </div>
     </div>
   </div>
+</nav>
+<nav id="mobile-nav" class="mobile-nav">
+  <div class="mobile-section">Industrial Tape</div>
+  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
+  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
+  <div class="mobile-section">Stretch Film</div>
+  <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
+  <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
+  <a href="stretch-film.html?tab=machine" class="mobile-sub">Machine Grade Film</a>
+  <a href="stretch-film.html?tab=color" class="mobile-sub">Color Film</a>
+  <a href="stretch-film.html?tab=banding" class="mobile-sub">Banding Film</a>
+  <div class="mobile-section">Strapping Products</div>
+  <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
+  <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
+  <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Bags / Mailers</div>
+  <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
+  <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
+  <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Bubble Mailers</a>
+  <a href="bags-mailers.html?tab=woven" class="mobile-sub">Woven Sacks</a>
+  <div class="mobile-section">Corrugated Boxes</div>
+  <a href="cardboard-box.html" class="mobile-sub">Cardboard Box</a>
+  <div class="mobile-section">Protective Materials</div>
+  <a href="protective-materials.html?tab=foam-rolls" class="mobile-sub">Foam Rolls</a>
+  <a href="protective-materials.html?tab=polystyrene" class="mobile-sub">Polystyrene Sheets &amp; Molding</a>
+  <a href="protective-materials.html?tab=bubble-wrap" class="mobile-sub">Bubble Wrap</a>
+  <a href="protective-materials.html?tab=corner" class="mobile-sub">Corner Protector</a>
+  <a href="protective-materials.html?tab=peanuts" class="mobile-sub">Peanuts</a>
+  <a href="protective-materials.html?tab=kraft" class="mobile-sub">Kraft Paper</a>
+  <div class="mobile-section">Warehouse Supplies &amp; Equipment</div>
+  <a href="equipment-handling.html" class="mobile-sub">Equipment Handling Tools</a>
+  <a href="hand-trucks.html" class="mobile-sub">Hand Trucks &amp; Dolly Movers</a>
+  <a href="industrial-staplers.html" class="mobile-sub">Industrial Staplers &amp; Staples</a>
+  <a href="pallet-jacks-racks.html" class="mobile-sub">Pallet, Jacks, Racks</a>
+  <a href="safety-supplies.html" class="mobile-sub">Safety Supplies</a>
+  <a href="seal-locks.html" class="mobile-sub">Seal &amp; Locks</a>
+  <a href="tools-office-supplies.html" class="mobile-sub">Tools &amp; Office Supplies</a>
+  <div class="mobile-section">Janitorial &amp; Cleaning Supplies</div>
+  <a href="breakroom-supplies.html" class="mobile-sub">Breakroom Supplies</a>
+  <a href="cleaning-supplies.html" class="mobile-sub">Cleaning Supplies</a>
+  <a href="trash-bags.html" class="mobile-sub">Trash Bags</a>
+  <a href="janitorial-paper.html" class="mobile-sub">Janitorial Paper &amp; Dispensers</a>
 </nav>
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
@@ -484,6 +606,18 @@
     document.getElementById('successMsg').style.display='block';
     this.reset();
   });
+
+  // Hamburger menu
+  (function() {
+    var btn = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobile-nav');
+    if (btn && mobileNav) {
+      btn.addEventListener('click', function() {
+        btn.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+      });
+    }
+  })();
 </script>
 </body>
 </html>
