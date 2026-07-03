@@ -116,6 +116,9 @@
   .prod-items li { font-size: 0.82rem; color: #666; padding: 3px 0; border-bottom: 1px solid #f5f5f5; }
   .prod-items li:last-child { border-bottom: none; }
   .prod-items li::before { content: '–  '; color: #c8391a; font-weight: 600; }
+  .prod-items li a { color: #666; text-decoration: none; }
+  .prod-items li a:hover { color: #c8391a; }
+  a.prod-title { display: block; text-decoration: none; }
   .prod-link { font-size: 0.82rem; font-weight: 600; color: #c8391a; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; }
   .prod-link:hover { gap: 8px; }
 
@@ -399,8 +402,8 @@
     <h1>Industrial Packaging,<br><em>Built for Business.</em></h1>
     <p>Premium tapes, stretch films, strapping, bags, and protective materials — delivered to businesses across the US. Competitive wholesale pricing, no retail markups.</p>
     <div class="hero-btns">
-      <a href="#inquiry" class="btn-red">Send an Inquiry</a>
-      <a href="#products" class="btn-outline">Browse Products</a>
+      <a href="#products" class="btn-red">Browse Products</a>
+      <a href="#why" class="btn-outline">Who We Are</a>
     </div>
   </div>
 </section>
@@ -427,79 +430,74 @@
     <div class="product-grid">
       <div class="product-card">
         <span class="prod-icon">🏷️</span>
-        <div class="prod-title">Industrial Tape</div>
+        <a href="tapes.html" class="prod-title">Industrial Tape</a>
         <ul class="prod-items">
-          <li>Artist Tape</li>
-          <li>Carton Sealing Tape</li>
-          <li>Duct Tape</li>
-          <li>Filament Tape</li>
-          <li>Gaffer Tape</li>
-          <li>Gum Tape</li>
-          <li>Masking Tape</li>
-          <li>Painters Tape</li>
-          <li>Strapping Tape</li>
-          <li>Vinyl Stripe Floor Tape</li>
+          <li><a href="tapes.html?tab=opp">OPP Packing Tape</a></li>
+          <li><a href="tapes.html?tab=pvc">PVC Colored Tape</a></li>
+          <li><a href="tapes.html?tab=flagging">Flagging Tape</a></li>
+          <li><a href="tapes.html">Masking Tape</a></li>
+          <li><a href="tapes.html">Duct Tape</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="tapes.html" class="prod-link">View Products →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🎞️</span>
-        <div class="prod-title">Stretch Film</div>
+        <a href="stretch-film.html" class="prod-title">Stretch Film</a>
         <ul class="prod-items">
-          <li>Sigma Blown Stretch Film</li>
-          <li>TPLUX Premium Cast Film</li>
-          <li>Machine Grade Film</li>
-          <li>Color Film</li>
-          <li>Banding Film</li>
+          <li><a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a></li>
+          <li><a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a></li>
+          <li><a href="stretch-film.html?tab=machine">Machine Grade Film</a></li>
+          <li><a href="stretch-film.html?tab=color">Color Film</a></li>
+          <li><a href="stretch-film.html?tab=banding">Banding Film</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="stretch-film.html" class="prod-link">View Products →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🔗</span>
-        <div class="prod-title">Strapping Products</div>
+        <a href="strapping-products.html" class="prod-title">Strapping Products</a>
         <ul class="prod-items">
-          <li>Polyester Strapping</li>
-          <li>Polypropylene Strapping</li>
-          <li>Steel Strapping</li>
+          <li><a href="strapping-products.html?tab=polyester">Polyester Strapping</a></li>
+          <li><a href="strapping-products.html?tab=poly">Polypropylene Strapping</a></li>
+          <li><a href="strapping-products.html?tab=steel">Steel Strapping</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="strapping-products.html" class="prod-link">View Products →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">📬</span>
-        <div class="prod-title">Bags / Mailers / Woven Sacks</div>
+        <a href="bags-mailers.html" class="prod-title">Bags / Mailers / Woven Sacks</a>
         <ul class="prod-items">
-          <li>Poly Bag</li>
-          <li>Mailer</li>
-          <li>Bubble Mailers</li>
-          <li>Woven Sacks</li>
+          <li><a href="bags-mailers.html?tab=polybag">Poly Bag</a></li>
+          <li><a href="bags-mailers.html?tab=mailer">Mailer</a></li>
+          <li><a href="bags-mailers.html?tab=bubble-mailer">Bubble Mailers</a></li>
+          <li><a href="bags-mailers.html?tab=woven">Woven Sacks</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="bags-mailers.html" class="prod-link">View Products →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">📦</span>
-        <div class="prod-title">Corrugated Cardboard / Box</div>
+        <a href="cardboard-box.html" class="prod-title">Corrugated Cardboard / Box</a>
         <ul class="prod-items">
-          <li>Cardboard Box</li>
+          <li><a href="cardboard-box.html">Cardboard Box</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="cardboard-box.html" class="prod-link">View Products →</a>
       </div>
       <div class="product-card">
         <span class="prod-icon">🛡️</span>
-        <div class="prod-title">Additional Protective Materials</div>
+        <a href="protective-materials.html" class="prod-title">Additional Protective Materials</a>
         <ul class="prod-items">
-          <li>Bubble Wrap</li>
-          <li>Corner Protector</li>
-          <li>Peanuts</li>
-          <li>Foam</li>
-          <li>Kraft Paper</li>
+          <li><a href="protective-materials.html?tab=bubble-wrap">Bubble Wrap</a></li>
+          <li><a href="protective-materials.html?tab=corner">Corner Protector</a></li>
+          <li><a href="protective-materials.html?tab=peanuts">Peanuts</a></li>
+          <li><a href="protective-materials.html?tab=foam-rolls">Foam</a></li>
+          <li><a href="protective-materials.html?tab=kraft">Kraft Paper</a></li>
         </ul>
-        <a href="#inquiry" class="prod-link">Request Inquiry →</a>
+        <a href="protective-materials.html" class="prod-link">View Products →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<section class="why" id="why">
   <div class="section-inner">
     <div class="sec-header">
       <span class="sec-label">Why TP Global</span>
