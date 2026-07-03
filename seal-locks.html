@@ -192,25 +192,11 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="nav-item">
-      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
-      </div>
-    </div>
+
     <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -227,6 +213,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -279,17 +274,6 @@
   </div>
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
-  <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -300,6 +284,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -351,7 +339,7 @@
       <h2>High Security Truck Steel Pin Seals</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Heavy-duty steel pin seals for securing truck doors and containers. Tamper-evident design ensures cargo integrity during transit.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -361,7 +349,7 @@
       <h2>King Pin Lock for Semi Trailers — Heavy Duty</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Heavy-duty king pin lock to prevent unauthorized coupling of semi-trailers. Essential anti-theft device for parked trailers at loading docks and storage yards.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -371,7 +359,7 @@
       <h2>Bar Lock for Containers</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Security bar lock for shipping containers. Provides a strong physical barrier against unauthorized access during storage and transport.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -381,7 +369,7 @@
       <h2>Bar Lock for Containers — Economic</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Cost-effective bar lock for securing shipping containers. A reliable and affordable option for container security in warehouses and shipping yards.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -392,7 +380,7 @@
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Tamper-evident metal cable seals for securing containers, trailers, and cargo. Sold in packs of 100 units. Each seal is uniquely numbered for tracking and accountability.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">100 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -404,7 +392,7 @@
       <p class="desc">Serialized security tape that leaves a visible "VOID" message when removed, indicating tampering. Ideal for sealing packages, evidence bags, and secure shipments.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 180'</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Serialized</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -415,7 +403,7 @@
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Tamper-evident security tape for sealing packages and cartons. Leaves a clear tamper indicator when removed for enhanced cargo security.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 164'</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -425,7 +413,7 @@
       <h2>Pull-Up Seals — Security Tie for Courier Bags</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Plastic pull-up security ties for sealing courier bags and envelopes. Tamper-evident closure for secure document and parcel delivery.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -436,7 +424,7 @@
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Heavy-duty metal cable seal for securing container doors, trailer doors, and large cargo openings. Each seal is individually numbered for traceability.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">3/16" × 62"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -447,7 +435,7 @@
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">ToppClip sealing tools for plastic or metal strapping. Master carton of 200 units for high-volume strapping operations.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">200 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -457,7 +445,7 @@
       <h2>ToppClip Starter Kit for Plastic or Metal Strapping</h2>
       <span class="category-tag">Seal &amp; Locks</span>
       <p class="desc">Complete starter kit with ToppClip tools and clips for plastic or metal strapping applications. Everything needed to get started with ToppClip strapping seals.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -469,7 +457,7 @@
       <p class="desc">Heavy-duty serrated metal seals for 5/8" high-tensile polyester strapping. Serrated design provides a secure crimp for maximum holding strength.</p>
       <div class="spec-row"><div class="spec-row-label">Compatible Width</div><div class="tag-group"><span class="spec-tag">5/8"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Serrated · HD Polyester</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 

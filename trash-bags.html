@@ -183,25 +183,11 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="nav-item">
-      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
-      </div>
-    </div>
+
     <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -218,6 +204,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -270,17 +265,6 @@
   </div>
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
-  <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -291,6 +275,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -342,7 +330,7 @@
       <h2>Superior Garbage Bags — Kitchen &amp; Waste Bin</h2>
       <span class="category-tag">Trash Bags</span>
       <p class="desc">Heavy-duty garbage bags suitable for kitchen and general waste bins. Tear-resistant construction for reliable everyday waste disposal in commercial and industrial environments. Contact us for available sizes and quantities.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 

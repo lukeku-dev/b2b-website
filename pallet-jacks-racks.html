@@ -192,25 +192,11 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="nav-item">
-      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
-      </div>
-    </div>
+
     <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -227,6 +213,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -279,17 +274,6 @@
   </div>
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
-  <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -300,6 +284,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -353,7 +341,7 @@
       <p class="desc">Heavy-duty manual pallet jack for moving pallets in warehouses and loading docks. Reliable and easy to operate for everyday use.</p>
       <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,000 lb</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -366,7 +354,7 @@
       <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">3,300 lb</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Full Electric</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -378,7 +366,7 @@
       <p class="desc">High-capacity manual pallet jack for heavy-duty industrial applications. Engineered for durability and reliable performance under demanding load conditions.</p>
       <div class="spec-row"><div class="spec-row-label">Fork Size</div><div class="tag-group"><span class="spec-tag">27" × 48"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,500 lb</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -391,7 +379,7 @@
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade A (Used)</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -403,7 +391,7 @@
       <p class="desc">Grade A wooden pallets sized for EH containers. Suitable for export and container shipping applications.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">22" × 37"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade A</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -415,7 +403,7 @@
       <p class="desc">Grade B wooden pallets for general warehousing and domestic shipping. A cost-effective option for non-export storage applications.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Grade</div><div class="tag-group"><span class="spec-tag">Grade B</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -427,7 +415,7 @@
       <p class="desc">Heat treated Euro pallets meeting ISPM 15 international shipping standards. Ideal for European export shipments and international freight.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">32" × 48"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -438,7 +426,7 @@
       <span class="category-tag">Pallet, Jacks, Racks</span>
       <p class="desc">Wooden pallets sized for E containers. Designed for container shipping and export applications requiring smaller pallet footprints.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">42" × 30"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -450,7 +438,7 @@
       <p class="desc">Heat treated wooden pallets in D container size. Compliant with ISPM 15 for international shipping.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">54" × 39"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Treatment</div><div class="tag-group"><span class="spec-tag">Heat Treated (ISPM 15)</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -463,7 +451,7 @@
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">48" × 40"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">2,000 lb</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Plastic</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -482,7 +470,7 @@
           <tr><td>5,000 lb</td><td>6"</td><td>1</td><td>94 lb</td><td>144"</td></tr>
         </tbody>
       </table>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -500,7 +488,7 @@
           <tr><td>144" × 42"</td></tr>
         </tbody>
       </table>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -511,7 +499,7 @@
       <span class="category-tag">Pallet, Jacks, Racks</span>
       <p class="desc">Steel wire decking for pallet rack shelves. Improves visibility of stored inventory, allows sprinkler water penetration for fire safety, and provides a stable surface for pallets and cartons.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">42" × 46"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -521,7 +509,7 @@
       <h2>Pallet Truck Stop</h2>
       <span class="category-tag">Pallet, Jacks, Racks</span>
       <p class="desc">Safety stop device for preventing pallet jacks and trucks from rolling uncontrolled. Essential safety equipment for loading docks and warehouse floors.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -534,7 +522,7 @@
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8" × 8" × 10"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">White</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">50 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 

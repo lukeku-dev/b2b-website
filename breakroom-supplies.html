@@ -183,25 +183,11 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="nav-item">
-      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
-      </div>
-    </div>
+
     <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -218,6 +204,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -270,17 +265,6 @@
   </div>
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
-  <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -291,6 +275,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -344,7 +332,7 @@
       <p class="desc">Individual coffee creamer packets for breakroom use. Pack of 8 units for easy serving.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">16 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">8 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -355,7 +343,7 @@
       <p class="desc">Pure granulated sugar packets for breakroom coffee stations. Pack of 8 units.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">22 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">8 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -366,7 +354,7 @@
       <p class="desc">Classic roast ground coffee for breakroom coffee makers. Smooth, balanced flavor suitable for all-day office use.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Roast</div><div class="tag-group"><span class="spec-tag">Classic Roast</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -377,7 +365,7 @@
       <p class="desc">Rich espresso-style ground coffee. Pack of 4 units for breakroom coffee stations.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">10 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">4 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -388,7 +376,7 @@
       <p class="desc">Lightweight disposable foam plates for breakroom and cafeteria use. Sturdy construction for hot and cold foods.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">9"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">500 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -397,7 +385,7 @@
       <h2>3/4" Plastifar Plastic Souffle Cup — Cuban Style</h2>
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Small plastic souffle cups for espresso and condiment serving. Cuban-style portion cups for breakroom and café use.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -407,7 +395,7 @@
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Commercial-grade coffee brewer basket filters compatible with standard commercial coffee makers. Pack of 1,000 units.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -418,7 +406,7 @@
       <p class="desc">Disposable cone paper cups for water coolers and beverage stations. Pack of 5,000 units for high-volume breakroom use.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4.5 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">5,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -427,7 +415,7 @@
       <h2>Foam Cups</h2>
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Insulated foam cups for hot and cold beverages. Ideal for breakrooms, coffee stations, and cafeteria service.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -437,7 +425,7 @@
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Disposable plastic coffee stirrers for breakroom use. Pack of 10,000 units for high-volume coffee stations.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">10,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -447,7 +435,7 @@
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Lightweight disposable plastic spoons for breakroom and cafeteria use. Pack of 1,000 units.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -457,7 +445,7 @@
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Lightweight disposable plastic knives for breakroom and cafeteria use. Pack of 1,000 units.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -467,7 +455,7 @@
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Lightweight disposable plastic forks for breakroom and cafeteria use. Pack of 1,000 units.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -476,7 +464,7 @@
       <h2>Soap Dispenser for Pure and Natural Soap</h2>
       <span class="category-tag">Breakroom Supplies</span>
       <p class="desc">Wall-mounted soap dispenser compatible with pure and natural liquid soap refills. Suitable for breakroom and restroom installations.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -487,7 +475,7 @@
       <p class="desc">Instant hand sanitizer refill for wall-mounted dispensers. 1000ml refill size, sold in cases of 4 for high-traffic breakrooms and entrances.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">1,000ml</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">4 cases</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -498,7 +486,7 @@
       <p class="desc">Medium-duty garbage bags for breakroom waste bins. 10 micron thickness for everyday trash disposal.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">30" × 37"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">20–30 Gallon</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 

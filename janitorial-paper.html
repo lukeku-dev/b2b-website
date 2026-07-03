@@ -183,23 +183,23 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
     <div class="nav-item">
       <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
+        <a href="tapes.html?tab=opp" >Artist Tape</a>
+        <a href="tapes.html?tab=opp" >Carton Sealing Tape</a>
+        <a href="tapes.html" >Duct Tape</a>
+        <a href="tapes.html">Filament Tape</a>
+        <a href="tapes.html">Gaffer Tape</a>
+        <a href="tapes.html">Gum Tape</a>
+        <a href="tapes.html" >Masking Tape</a>
+        <a href="tapes.html">Painters Tape</a>
+        <a href="tapes.html">Strapping Tape</a>
+        <a href="tapes.html">Vinyl Stripe Floor Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -218,6 +218,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -271,16 +280,16 @@
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
   <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
+  <a href="tapes.html" class="mobile-sub">Artist Tape</a>
+  <a href="tapes.html?tab=opp" class="mobile-sub">Carton Sealing Tape</a>
+  <a href="tapes.html" class="mobile-sub">Duct Tape</a>
+  <a href="tapes.html" class="mobile-sub">Filament Tape</a>
+  <a href="tapes.html" class="mobile-sub">Gaffer Tape</a>
+  <a href="tapes.html" class="mobile-sub">Gum Tape</a>
+  <a href="tapes.html" class="mobile-sub">Masking Tape</a>
+  <a href="tapes.html" class="mobile-sub">Painters Tape</a>
+  <a href="tapes.html" class="mobile-sub">Strapping Tape</a>
+  <a href="tapes.html" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -291,6 +300,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -344,7 +357,7 @@
       <p class="desc">High-quality 2-ply center pull paper towels for restroom and breakroom dispensers. 450 feet per roll, case of 600 units.</p>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Length</div><div class="tag-group"><span class="spec-tag">450'</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -354,7 +367,7 @@
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Economy bathroom tissue for high-traffic commercial restrooms. 500 sheets per roll for extended use between changes.</p>
       <div class="spec-row"><div class="spec-row-label">Sheets per Roll</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -363,7 +376,7 @@
       <h2>Hardwound Roll Towels</h2>
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Hardwound paper towel rolls for wall-mounted dispensers. Ideal for commercial restrooms and breakrooms requiring controlled towel dispensing.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -375,7 +388,7 @@
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4" × 3.1"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Sheets</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -386,7 +399,7 @@
       <p class="desc">2-ply jumbo toilet tissue roll for high-traffic commercial restrooms. Large roll size reduces change frequency and maintenance time.</p>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Type</div><div class="tag-group"><span class="spec-tag">Jumbo Roll</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -397,7 +410,7 @@
       <p class="desc">Half-fold disposable toilet seat covers for commercial restrooms. Case of 20 packs for high-traffic facilities.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">15" × 10.125"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">20 packs</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -406,7 +419,7 @@
       <h2>Multifold Paper Towels</h2>
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Multifold paper towels for C-fold and multifold dispensers in commercial restrooms and breakrooms. Absorbent and durable for everyday hand drying.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -417,7 +430,7 @@
       <p class="desc">1-ply center fold paper towels for standard restroom dispensers. 10" × 12" size for reliable hand drying in commercial facilities.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">10" × 12"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">1-Ply</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -428,7 +441,7 @@
       <p class="desc">Soft and absorbent 2-ply paper towels for breakrooms and restrooms. Case of 30 units for ongoing supply.</p>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">30 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -437,7 +450,7 @@
       <h2>Double Bath Tissue Dispenser</h2>
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Wall-mounted double roll bathroom tissue dispenser for commercial restrooms. Holds two standard rolls to reduce restocking frequency.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -448,7 +461,7 @@
       <p class="desc">Single Jr. Jumbo tissue dispenser for 12" jumbo rolls. Smoke-colored cover for a modern commercial restroom look.</p>
       <div class="spec-row"><div class="spec-row-label">Roll Size</div><div class="tag-group"><span class="spec-tag">12"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -459,7 +472,7 @@
       <p class="desc">Single Jr. Jumbo tissue dispenser for 9" jumbo rolls. Smoke-colored cover for commercial restroom installations.</p>
       <div class="spec-row"><div class="spec-row-label">Roll Size</div><div class="tag-group"><span class="spec-tag">9"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -470,7 +483,7 @@
       <p class="desc">Twin jumbo tissue dispenser holding two large rolls simultaneously. Smoke black finish for commercial restrooms. Minimizes restocking with high-capacity dual-roll design.</p>
       <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Smoke Black</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">Twin Roll</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -482,7 +495,7 @@
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">3 15/16" × 3.5"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Ply</div><div class="tag-group"><span class="spec-tag">2-Ply</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Sheets</div><div class="tag-group"><span class="spec-tag">500</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -492,7 +505,7 @@
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Touchless automatic paper towel dispenser for hygienic hand drying in commercial restrooms. Compatible with 7.5" and 8.25" hardwound roll towels.</p>
       <div class="spec-row"><div class="spec-row-label">Roll Compatibility</div><div class="tag-group"><span class="spec-tag">7.5"</span><span class="spec-tag">8.25"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -503,7 +516,7 @@
       <p class="desc">Insulated 8 Oz foam cups for hot and cold beverages. Case of 1,000 units for breakrooms and cafeteria service.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8 Oz</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">1,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
   <div class="product-section">
@@ -512,7 +525,7 @@
       <h2>Bump Bar Roll Towel Dispenser</h2>
       <span class="category-tag">Janitorial Paper &amp; Dispensers</span>
       <p class="desc">Bump-bar activated roll towel dispenser for touchless paper dispensing in commercial restrooms. Hygienic operation for high-traffic facilities.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 

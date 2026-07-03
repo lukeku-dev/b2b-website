@@ -192,25 +192,11 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="nav-item">
-      <a href="index.html#products">Industrial Tape <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="index.html#inquiry">Artist Tape</a>
-        <a href="index.html#inquiry">Carton Sealing Tape</a>
-        <a href="index.html#inquiry">Duct Tape</a>
-        <a href="index.html#inquiry">Filament Tape</a>
-        <a href="index.html#inquiry">Gaffer Tape</a>
-        <a href="index.html#inquiry">Gum Tape</a>
-        <a href="index.html#inquiry">Masking Tape</a>
-        <a href="index.html#inquiry">Painters Tape</a>
-        <a href="index.html#inquiry">Strapping Tape</a>
-        <a href="index.html#inquiry">Vinyl Stripe Floor Tape</a>
-      </div>
-    </div>
+
     <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
@@ -227,6 +213,15 @@
         <a href="strapping-products.html?tab=polyester">Polyester Strapping</a>
         <a href="strapping-products.html?tab=polypropylene">Polypropylene Strapping</a>
         <a href="strapping-products.html?tab=steel">Steel Strapping</a>
+        <a href="strapping-products.html?tab=tools">Strapping Tools</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="tapes.html">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp">OPP Packing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
       </div>
     </div>
     <div class="nav-item">
@@ -279,17 +274,6 @@
   </div>
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
-  <div class="mobile-section">Industrial Tape</div>
-  <a href="index.html#inquiry" class="mobile-sub">Artist Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Carton Sealing Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Duct Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Filament Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gaffer Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Gum Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Masking Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Painters Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Strapping Tape</a>
-  <a href="index.html#inquiry" class="mobile-sub">Vinyl Stripe Floor Tape</a>
   <div class="mobile-section">Stretch Film</div>
   <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
   <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
@@ -300,6 +284,10 @@
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
   <a href="strapping-products.html?tab=polypropylene" class="mobile-sub">Polypropylene Strapping</a>
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
+  <div class="mobile-section">Tapes</div>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
+  <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
@@ -353,7 +341,7 @@
       <p class="desc">Legal size copy paper for printers and copiers. 5,000 sheet case for high-volume office and warehouse printing needs.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">8.5" × 14"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Qty</div><div class="tag-group"><span class="spec-tag">5,000 sheets</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -365,7 +353,7 @@
       <p class="desc">92 bright multipurpose letter copy paper for everyday office use. Compatible with all standard laser and inkjet printers and copiers.</p>
       <div class="spec-row"><div class="spec-row-label">Brightness</div><div class="tag-group"><span class="spec-tag">92</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">Letter</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -377,7 +365,7 @@
       <p class="desc">4-part NCR (no carbon required) continuous form air waybills for shipping documentation. Pack of 25 units for freight and logistics operations.</p>
       <div class="spec-row"><div class="spec-row-label">Parts</div><div class="tag-group"><span class="spec-tag">4-Part NCR</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">25 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -389,7 +377,7 @@
       <p class="desc">Two-part perforated coupon tickets for item tracking, baggage tagging, and inventory management. Printed with "Keep This Ticket" for customer retention.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">2" × 1"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">5,000 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -401,7 +389,7 @@
       <p class="desc">Heavy-duty 13-point manila shipping tags, pre-strung and ready to use. Available in multiple colors for color-coded inventory and shipping identification.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4.25" × 2.125"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">13-point · Pre-strung</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -413,7 +401,7 @@
       <p class="desc">Large tip black markers for marking pallets, cartons, and warehouse inventory. Permanent ink for clear, long-lasting markings on cardboard, wood, and plastic surfaces.</p>
       <div class="spec-row"><div class="spec-row-label">Color</div><div class="tag-group"><span class="spec-tag">Black</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">12 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -424,7 +412,7 @@
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Compact and reliable tape measure for measuring pallets, packages, and warehouse spaces. Lever lock blade for easy one-hand use.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">1/2" × 25'</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -436,7 +424,7 @@
       <p class="desc">Large platform floor scale for weighing pallets and heavy freight. High-capacity 5,000 lb capacity with a wide 48" × 48" platform suitable for standard pallet sizes.</p>
       <div class="spec-row"><div class="spec-row-label">Platform Size</div><div class="tag-group"><span class="spec-tag">48" × 48"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">5,000 lb</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -448,7 +436,7 @@
       <p class="desc">NTEP-certified legal-for-trade digital scale for accurate commercial weighing. Suitable for shipping departments and freight operations requiring certified weight measurements.</p>
       <div class="spec-row"><div class="spec-row-label">Capacity</div><div class="tag-group"><span class="spec-tag">350 lb</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Certification</div><div class="tag-group"><span class="spec-tag">Legal for Trade</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -459,7 +447,7 @@
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Heavy-duty industrial pedestal fan for warehouse and workshop ventilation. Adjustable height and tilt for directed airflow across large spaces.</p>
       <div class="spec-row"><div class="spec-row-label">Blade Size</div><div class="tag-group"><span class="spec-tag">30"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -469,7 +457,7 @@
       <h2>Oscillating Misting Fan System Kit</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Industrial misting fan system for cooling outdoor loading docks and warehouse spaces. Oscillating design for wide area coverage. Reduces ambient temperature for outdoor workers.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -480,7 +468,7 @@
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">High-powered 42" portable belt drive blower fan for maximum airflow in large warehouses and industrial spaces. Portable design for easy repositioning.</p>
       <div class="spec-row"><div class="spec-row-label">Blade Size</div><div class="tag-group"><span class="spec-tag">42"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -492,7 +480,7 @@
       <p class="desc">Strong white polypropylene tying twine for bundling, baling, and general warehouse use. 450 lb tensile strength for reliable bundling of heavy packages and materials.</p>
       <div class="spec-row"><div class="spec-row-label">Tensile Strength</div><div class="tag-group"><span class="spec-tag">450 lb</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Material</div><div class="tag-group"><span class="spec-tag">Polypropylene · 1-Ply</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -502,7 +490,7 @@
       <h2>Glue Gun</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Industrial hot glue gun for packaging, assembly, and general warehouse repairs. Compatible with standard glue sticks for versatile bonding applications.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -514,7 +502,7 @@
       <p class="desc">Standard size hot melt glue sticks compatible with most industrial and retail glue guns. Sold in bags of 50 sticks.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">10" × 7/16"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">50 units/bag</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -526,7 +514,7 @@
       <p class="desc">1/2" diameter hot melt glue sticks for industrial glue guns. Sold by the case (25 lb) for high-volume packaging and bonding operations.</p>
       <div class="spec-row"><div class="spec-row-label">Diameter</div><div class="tag-group"><span class="spec-tag">1/2"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Case Weight</div><div class="tag-group"><span class="spec-tag">25 lb</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -538,7 +526,7 @@
       <p class="desc">Compact aluminum utility knife for cutting tape, cartons, and packaging materials. Pack of 12 for warehouse and shipping department use.</p>
       <div class="spec-row"><div class="spec-row-label">Size</div><div class="tag-group"><span class="spec-tag">4.2" × 2"</span></div></div>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">12 units</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -548,7 +536,7 @@
       <h2>Retractable Metal Heavy Duty Knife</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Heavy-duty metal retractable utility knife for cutting strapping, tape, and packaging materials. Durable metal body with quick-change blade mechanism.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -558,7 +546,7 @@
       <h2>Folding Utility Knife</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Compact folding utility knife for safe carrying and easy access. Ideal for warehouse workers who need a reliable cutting tool throughout the workday.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -569,7 +557,7 @@
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Replacement blades with built-in dispenser for standard utility knives. Pack of 75 blades for extended warehouse use.</p>
       <div class="spec-row"><div class="spec-row-label">Pack</div><div class="tag-group"><span class="spec-tag">75 blades</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -579,7 +567,7 @@
       <h2>Bolt Cutters</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Heavy-duty bolt cutters for cutting wire, cable, padlocks, and chains. Essential tool for warehouse maintenance and security operations.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -589,7 +577,7 @@
       <h2>Scale Heavy Duty Front Bump Guard</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Front bump guard for platform scales to protect the scale from forklift and pallet jack impacts. Extends the life of warehouse floor scales.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -599,7 +587,7 @@
       <h2>Scale Heavy Duty Side Bump Guard</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Side bump guard for platform scales providing lateral impact protection. Pairs with front bump guard for complete scale protection in busy warehouse environments.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -609,7 +597,7 @@
       <h2>Scale Medium Duty Side Bump Guard</h2>
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Medium duty side bump guard for standard warehouse floor scales. Provides essential impact protection for everyday warehouse use.</p>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
@@ -620,7 +608,7 @@
       <span class="category-tag">Tools &amp; Office Supplies</span>
       <p class="desc">Adjustable height standing desk for warehouse offices and shipping stations. Promotes ergonomic working posture for staff who alternate between sitting and standing.</p>
       <div class="spec-row"><div class="spec-row-label">Desktop Size</div><div class="tag-group"><span class="spec-tag">26.5" × 22.2"</span></div></div>
-      <button class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
+      <button type="button" class="inquiry-btn" onclick="document.getElementById('inquiry').scrollIntoView({behavior:'smooth'})">Make a Price Inquiry</button>
     </div>
   </div>
 
