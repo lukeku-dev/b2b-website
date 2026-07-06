@@ -92,6 +92,10 @@
   .size-grid { display: flex; flex-wrap: wrap; gap: 8px; }
   .size-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; font-family: 'Courier New', monospace; transition: all 0.15s; }
   .size-tag:hover { background: #1c3557; color: #fff; border-color: #1c3557; }
+  .spec-row { margin-bottom: 16px; }
+  .spec-row-label { font-size: 0.8rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tag { background: #f4f6f9; border: 1px solid #e0e5ee; color: #1c3557; font-size: 0.82rem; font-weight: 500; padding: 6px 12px; border-radius: 4px; font-family: 'Courier New', monospace; }
   .acc-note { font-size: 0.82rem; color: #888; margin-top: 14px; font-style: italic; }
 
   .inquiry-btn { display: inline-flex; align-items: center; gap: 8px; background: #c8391a; color: #fff; font-weight: 600; font-size: 0.92rem; padding: 13px 28px; border-radius: 3px; text-decoration: none; transition: background 0.2s; margin-top: 8px; border: none; cursor: pointer; }
@@ -200,7 +204,7 @@
   <div class="header-inner">
     <a href="index.html" class="logo">
       <img src="logo.png" alt="TP Global">
-      <div class="logo-tagline">Industrial Packaging Solutions</div>
+      <div class="logo-tagline"><strong style="font-size:1rem; color:#1c3557; font-family:Montserrat,sans-serif;">TP Global</strong></div>
     </a>
     <div class="header-right">
       <div class="header-contact">
@@ -219,12 +223,19 @@
     </button>
 
     <div class="nav-item">
+      <a href="tapes.html"">Tapes <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="tapes.html?tab=opp"">OPP Carton Sealing Tape</a>
+        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
+        <a href="tapes.html?tab=flagging">Flagging Tape</a>
+      </div>
+    </div>
+    <div class="nav-item">
       <a href="stretch-film.html">Stretch Film <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="stretch-film.html?tab=sigma">Sigma Blown Stretch Film</a>
-        <a href="stretch-film.html?tab=tplux">TPLUX Premium Cast Film</a>
+        <a href="stretch-film.html?tab=sigma">Blown Stretch Film</a>
+        <a href="stretch-film.html?tab=tplux">Cast Film</a>
         <a href="stretch-film.html?tab=machine">Machine Grade Film</a>
-        <a href="stretch-film.html?tab=color">Color Film</a>
         <a href="stretch-film.html?tab=banding">Banding Film</a>
       </div>
     </div>
@@ -238,14 +249,6 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="tapes.html"">Tapes <span class="arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="tapes.html?tab=opp"">OPP Packing Tape</a>
-        <a href="tapes.html?tab=pvc">PVC Colored Tape</a>
-        <a href="tapes.html?tab=flagging">Flagging Tape</a>
-      </div>
-    </div>
-    <div class="nav-item">
       <a href="bags-mailers.html">Bags / Mailers <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="bags-mailers.html?tab=polybag">Poly Bag</a>
@@ -254,7 +257,7 @@
       </div>
     </div>
     <div class="nav-item">
-      <a href="cardboard-box.html" class="active">Corrugated Boxes <span class="arrow">▼</span></a>
+      <a href="cardboard-box.html" class="active">Cardboard Boxes <span class="arrow">▼</span></a>
       <div class="dropdown">
         <a href="cardboard-box.html" class="active">Cardboard Box</a>
       </div>
@@ -272,13 +275,9 @@
     <div class="nav-item">
       <a href="warehouse-supplies.html">Warehouse Supplies &amp; Equipment <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="equipment-handling.html">Equipment Handling Tools</a>
-        <a href="hand-trucks.html">Hand Trucks &amp; Dolly Movers</a>
         <a href="industrial-staplers.html">Industrial Staplers &amp; Staples</a>
         <a href="pallet-jacks-racks.html">Pallet, Jacks, Racks</a>
         <a href="safety-supplies.html">Safety Supplies</a>
-        <a href="seal-locks.html">Seal &amp; Locks</a>
-        <a href="tools-office-supplies.html">Tools &amp; Office Supplies</a>
       </div>
     </div>
     <div class="nav-item">
@@ -294,10 +293,9 @@
 </nav>
 <nav id="mobile-nav" class="mobile-nav">
   <div class="mobile-section">Stretch Film</div>
-  <a href="stretch-film.html?tab=sigma" class="mobile-sub">Sigma Blown Stretch Film</a>
-  <a href="stretch-film.html?tab=tplux" class="mobile-sub">TPLUX Premium Cast Film</a>
+  <a href="stretch-film.html?tab=sigma" class="mobile-sub">Blown Stretch Film</a>
+  <a href="stretch-film.html?tab=tplux" class="mobile-sub">Cast Film</a>
   <a href="stretch-film.html?tab=machine" class="mobile-sub">Machine Grade Film</a>
-  <a href="stretch-film.html?tab=color" class="mobile-sub">Color Film</a>
   <a href="stretch-film.html?tab=banding" class="mobile-sub">Banding Film</a>
   <div class="mobile-section">Strapping Products</div>
   <a href="strapping-products.html?tab=polyester" class="mobile-sub">Polyester Strapping</a>
@@ -305,14 +303,14 @@
   <a href="strapping-products.html?tab=steel" class="mobile-sub">Steel Strapping</a>
   <a href="strapping-products.html?tab=tools" class="mobile-sub">Strapping Tools</a>
   <div class="mobile-section">Tapes</div>
-  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Packing Tape</a>
+  <a href="tapes.html?tab=opp" class="mobile-sub">OPP Carton Sealing Tape</a>
   <a href="tapes.html?tab=pvc" class="mobile-sub">PVC Colored Tape</a>
   <a href="tapes.html?tab=flagging" class="mobile-sub">Flagging Tape</a>
   <div class="mobile-section">Bags / Mailers</div>
   <a href="bags-mailers.html?tab=polybag" class="mobile-sub">Poly Bag</a>
   <a href="bags-mailers.html?tab=mailer" class="mobile-sub">Mailer</a>
   <a href="bags-mailers.html?tab=woven" class="mobile-sub">Woven Sacks</a>
-  <div class="mobile-section">Corrugated Boxes</div>
+  <div class="mobile-section">Cardboard Boxes</div>
   <a href="cardboard-box.html" class="mobile-sub">Cardboard Box</a>
   <div class="mobile-section">Protective Materials</div>
   <a href="protective-materials.html?tab=bubble-wrap" class="mobile-sub">Bubble Wrap</a>
@@ -321,13 +319,9 @@
   <a href="protective-materials.html?tab=foam-rolls" class="mobile-sub">Foam</a>
   <a href="protective-materials.html?tab=kraft" class="mobile-sub">Kraft Paper</a>
   <div class="mobile-section">Warehouse Supplies &amp; Equipment</div>
-  <a href="equipment-handling.html" class="mobile-sub">Equipment Handling Tools</a>
-  <a href="hand-trucks.html" class="mobile-sub">Hand Trucks &amp; Dolly Movers</a>
   <a href="industrial-staplers.html" class="mobile-sub">Industrial Staplers &amp; Staples</a>
   <a href="pallet-jacks-racks.html" class="mobile-sub">Pallet, Jacks, Racks</a>
   <a href="safety-supplies.html" class="mobile-sub">Safety Supplies</a>
-  <a href="seal-locks.html" class="mobile-sub">Seal &amp; Locks</a>
-  <a href="tools-office-supplies.html" class="mobile-sub">Tools &amp; Office Supplies</a>
   <div class="mobile-section">Janitorial &amp; Cleaning Supplies</div>
   <a href="breakroom-supplies.html" class="mobile-sub">Breakroom Supplies</a>
   <a href="cleaning-supplies.html" class="mobile-sub">Cleaning Supplies</a>
@@ -370,97 +364,78 @@
         <span class="category-tag">Cardboard Box</span>
         <p class="desc">Lightweight and versatile single wall corrugated boxes. We stock cube sizes from 4" to 24" and a wide range of industrial standard sizes for various shipping and storage needs.</p>
 
-        <!-- ACCORDION: Cube Size -->
-        <div class="accordion">
-          <div class="accordion-header" onclick="toggleAcc(this)">
-            <div class="acc-title">
-              Cube Sizes
-              <span class="acc-label">4" – 24"</span>
-            </div>
-            <span class="acc-arrow">▼</span>
-          </div>
-          <div class="accordion-body">
-            <div class="size-grid">
-              <span class="size-tag">4x4x4</span>
-              <span class="size-tag">6x6x6</span>
-              <span class="size-tag">8x8x8</span>
-              <span class="size-tag">10x10x10</span>
-              <span class="size-tag">12x12x12</span>
-              <span class="size-tag">14x14x14</span>
-              <span class="size-tag">16x16x16</span>
-              <span class="size-tag">18x18x18</span>
-              <span class="size-tag">20x20x20</span>
-              <span class="size-tag">22x22x22</span>
-              <span class="size-tag">24x24x24</span>
-            </div>
+        <div class="spec-row">
+          <div class="spec-row-label">Cube Sizes</div>
+          <div class="tag-group">
+            <span class="spec-tag">4×4×4</span>
+            <span class="spec-tag">6×6×6</span>
+            <span class="spec-tag">8×8×8</span>
+            <span class="spec-tag">10×10×10</span>
+            <span class="spec-tag">12×12×12</span>
+            <span class="spec-tag">14×14×14</span>
+            <span class="spec-tag">16×16×16</span>
+            <span class="spec-tag">18×18×18</span>
+            <span class="spec-tag">20×20×20</span>
+            <span class="spec-tag">22×22×22</span>
+            <span class="spec-tag">24×24×24</span>
           </div>
         </div>
-
-        <!-- ACCORDION: Industrial Size -->
-        <div class="accordion">
-          <div class="accordion-header" onclick="toggleAcc(this)">
-            <div class="acc-title">
-              Industrial Standard Sizes
-              <span class="acc-label">50+ sizes available</span>
-            </div>
-            <span class="acc-arrow">▼</span>
-          </div>
-          <div class="accordion-body">
-            <div class="size-grid">
-              <span class="size-tag">4x4x8</span>
-              <span class="size-tag">4x4x12</span>
-              <span class="size-tag">5x5x5</span>
-              <span class="size-tag">6x3x3</span>
-              <span class="size-tag">6x4x4</span>
-              <span class="size-tag">6x6x8</span>
-              <span class="size-tag">7x4x4</span>
-              <span class="size-tag">7x5x5</span>
-              <span class="size-tag">8x4x4</span>
-              <span class="size-tag">8x6x4</span>
-              <span class="size-tag">8x8x5</span>
-              <span class="size-tag">8x8x7</span>
-              <span class="size-tag">9x7x5</span>
-              <span class="size-tag">10x7x4</span>
-              <span class="size-tag">10x8x5</span>
-              <span class="size-tag">10x8x6</span>
-              <span class="size-tag">10x10x6</span>
-              <span class="size-tag">11½x11x6</span>
-              <span class="size-tag">12x6x6</span>
-              <span class="size-tag">12x8x4</span>
-              <span class="size-tag">12x9x4</span>
-              <span class="size-tag">12x9x6</span>
-              <span class="size-tag">12x9x9</span>
-              <span class="size-tag">12x10x2</span>
-              <span class="size-tag">13x13x7</span>
-              <span class="size-tag">13x10x2</span>
-              <span class="size-tag">13x13x4</span>
-              <span class="size-tag">14x10x9</span>
-              <span class="size-tag">14x9x5</span>
-              <span class="size-tag">14x10x4</span>
-              <span class="size-tag">14x10x6</span>
-              <span class="size-tag">14x14x2</span>
-              <span class="size-tag">14x14x17</span>
-              <span class="size-tag">15x8x6</span>
-              <span class="size-tag">15x12x6</span>
-              <span class="size-tag">15x15x4</span>
-              <span class="size-tag">15x15x7</span>
-              <span class="size-tag">15x15x48</span>
-              <span class="size-tag">16x10x6</span>
-              <span class="size-tag">16x10x10</span>
-              <span class="size-tag">16x12x8</span>
-              <span class="size-tag">16x12x10</span>
-              <span class="size-tag">16x12x12</span>
-              <span class="size-tag">16x14x10</span>
-              <span class="size-tag">18x8x6</span>
-              <span class="size-tag">18x10x10</span>
-              <span class="size-tag">18x12x12</span>
-              <span class="size-tag">18x18x2</span>
-              <span class="size-tag">18x18x6</span>
-              <span class="size-tag">18x18x8</span>
-            </div>
-            <p class="acc-note">Don't see the size you need? Contact us — we can source or custom make it.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Industrial Standard Sizes</div>
+          <div class="tag-group">
+            <span class="spec-tag">4×4×8</span>
+            <span class="spec-tag">4×4×12</span>
+            <span class="spec-tag">5×5×5</span>
+            <span class="spec-tag">6×3×3</span>
+            <span class="spec-tag">6×4×4</span>
+            <span class="spec-tag">6×6×8</span>
+            <span class="spec-tag">7×4×4</span>
+            <span class="spec-tag">7×5×5</span>
+            <span class="spec-tag">8×4×4</span>
+            <span class="spec-tag">8×6×4</span>
+            <span class="spec-tag">8×8×5</span>
+            <span class="spec-tag">8×8×7</span>
+            <span class="spec-tag">9×7×5</span>
+            <span class="spec-tag">10×7×4</span>
+            <span class="spec-tag">10×8×5</span>
+            <span class="spec-tag">10×8×6</span>
+            <span class="spec-tag">10×10×6</span>
+            <span class="spec-tag">11½×11×6</span>
+            <span class="spec-tag">12×6×6</span>
+            <span class="spec-tag">12×8×4</span>
+            <span class="spec-tag">12×9×4</span>
+            <span class="spec-tag">12×9×6</span>
+            <span class="spec-tag">12×9×9</span>
+            <span class="spec-tag">12×10×2</span>
+            <span class="spec-tag">13×10×2</span>
+            <span class="spec-tag">13×13×4</span>
+            <span class="spec-tag">13×13×7</span>
+            <span class="spec-tag">14×9×5</span>
+            <span class="spec-tag">14×10×4</span>
+            <span class="spec-tag">14×10×6</span>
+            <span class="spec-tag">14×10×9</span>
+            <span class="spec-tag">14×14×2</span>
+            <span class="spec-tag">14×14×17</span>
+            <span class="spec-tag">15×8×6</span>
+            <span class="spec-tag">15×12×6</span>
+            <span class="spec-tag">15×15×4</span>
+            <span class="spec-tag">15×15×7</span>
+            <span class="spec-tag">15×15×48</span>
+            <span class="spec-tag">16×10×6</span>
+            <span class="spec-tag">16×10×10</span>
+            <span class="spec-tag">16×12×8</span>
+            <span class="spec-tag">16×12×10</span>
+            <span class="spec-tag">16×12×12</span>
+            <span class="spec-tag">16×14×10</span>
+            <span class="spec-tag">18×8×6</span>
+            <span class="spec-tag">18×10×10</span>
+            <span class="spec-tag">18×12×12</span>
+            <span class="spec-tag">18×18×2</span>
+            <span class="spec-tag">18×18×6</span>
+            <span class="spec-tag">18×18×8</span>
           </div>
         </div>
+        <p style="font-size:0.82rem; color:#888; margin-bottom:16px;">Don't see the size you need? Contact us — we can source or custom make it.</p>
 
         <a href="#inquiry" class="inquiry-btn">Make a Price Inquiry</a>
       </div>
@@ -478,30 +453,22 @@
         <span class="category-tag">Cardboard Box</span>
         <p class="desc">Heavy-duty double wall corrugated boxes for maximum protection. Ideal for heavier products, long-distance freight, and industrial use.</p>
 
-        <div class="accordion">
-          <div class="accordion-header" onclick="toggleAcc(this)">
-            <div class="acc-title">
-              📐 Available Sizes
-              <span class="acc-label">10 sizes</span>
-            </div>
-            <span class="acc-arrow">▼</span>
-          </div>
-          <div class="accordion-body">
-            <div class="size-grid">
-              <span class="size-tag">12x12x12</span>
-              <span class="size-tag">14x14x14</span>
-              <span class="size-tag">16x16x16</span>
-              <span class="size-tag">18x18x18</span>
-              <span class="size-tag">18x18x28</span>
-              <span class="size-tag">20x20x20</span>
-              <span class="size-tag">22x22x22</span>
-              <span class="size-tag">24x16x12</span>
-              <span class="size-tag">24x24x24</span>
-              <span class="size-tag">36x36x36</span>
-            </div>
-            <p class="acc-note">Need a different size? Contact us for custom options.</p>
+        <div class="spec-row">
+          <div class="spec-row-label">Available Sizes</div>
+          <div class="tag-group">
+            <span class="spec-tag">12×12×12</span>
+            <span class="spec-tag">14×14×14</span>
+            <span class="spec-tag">16×16×16</span>
+            <span class="spec-tag">18×18×18</span>
+            <span class="spec-tag">18×18×28</span>
+            <span class="spec-tag">20×20×20</span>
+            <span class="spec-tag">22×22×22</span>
+            <span class="spec-tag">24×16×12</span>
+            <span class="spec-tag">24×24×24</span>
+            <span class="spec-tag">36×36×36</span>
           </div>
         </div>
+        <p style="font-size:0.82rem; color:#888; margin-bottom:16px;">Need a different size? Contact us for custom options.</p>
 
         <a href="#inquiry" class="inquiry-btn">Make a Price Inquiry</a>
       </div>
